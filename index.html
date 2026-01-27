@@ -2,250 +2,311 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Efemena “Efe” Abogidi | GIS & Professional Athlete</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Efemena Abogidi | GIS & Professional Athlete</title>
+
   <style>
     :root{
-      --bg0:#05070f;
-      --bg1:#070a16;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --stroke:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --muted2:rgba(255,255,255,.55);
-      --accent:#7dd3fc;
-      --accent2:#a78bfa;
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --bg:#070A12;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.10);
+      --text:#EEF2FF;
+      --muted:rgba(238,242,255,.72);
+      --muted2:rgba(238,242,255,.55);
+      --accent:#7C3AED;
+      --accent2:#22D3EE;
+      --shadow: 0 18px 40px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+      --max:1100px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      background: radial-gradient(1200px 700px at 18% 18%, rgba(124,58,237,.35), transparent 55%),
+                  radial-gradient(1000px 700px at 80% 10%, rgba(34,211,238,.25), transparent 55%),
+                  radial-gradient(900px 600px at 70% 80%, rgba(124,58,237,.18), transparent 60%),
+                  var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 10% 10%, rgba(125,211,252,.18), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(167,139,250,.18), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      min-height:100vh;
+      line-height:1.6;
     }
 
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.9}
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ opacity:.92; }
 
-    .wrap{max-width:1100px; margin:0 auto; padding:26px 18px 70px;}
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 18px 80px;
+    }
+
+    /* Top Nav */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.62);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
     .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(5,7,15,.55);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .navInner{
-      max-width:1100px; margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 18px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
     }
-    .dot{
-      width:10px; height:10px; border-radius:99px;
-      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent2));
-      box-shadow: 0 0 18px rgba(125,211,252,.35);
+    .brand-dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(124,58,237,.15);
     }
-    .menu{display:flex; gap:16px; align-items:center; flex-wrap:wrap;}
-    .menu a{
-      font-size:13px; color:var(--muted);
-      padding:8px 10px; border-radius:10px;
-      border:1px solid transparent;
+    .navlinks{
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      font-weight:600;
+      color: var(--muted);
     }
-    .menu a:hover{
-      color:var(--text);
-      border-color:rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
+    .navlinks a{
+      padding:8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+    }
+    .navlinks a:hover{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.08);
+      color: var(--text);
     }
 
+    /* Hero */
     .hero{
-      padding:42px 0 18px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:18px;
-      align-items:start;
+      padding: 32px 0 18px;
     }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding-top:26px;}
-    }
-
     .kicker{
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--muted2);
-      margin-bottom:10px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      font-weight: 700;
     }
     h1{
-      margin:0;
-      font-size:56px;
-      line-height:1.05;
-      letter-spacing:-.02em;
+      margin: 10px 0 8px;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
-    @media (max-width: 600px){ h1{font-size:42px;} }
-
     .lead{
-      margin:14px 0 0;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.7;
-      max-width:62ch;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 22px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.3fr .9fr;
+      gap: 18px;
+      margin-top: 18px;
     }
 
     .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      padding: 18px 18px;
       box-shadow: var(--shadow);
     }
-    .pad{padding:18px;}
-    .cardTitle{
-      font-size:14px;
-      font-weight:700;
-      margin:0 0 10px;
-      letter-spacing:.2px;
+
+    .card h2{
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: .2px;
     }
-    .hr{
-      height:1px;
-      background:rgba(255,255,255,.09);
-      margin:16px 0;
-      border:0;
-    }
+    .card p{ margin: 0 0 12px; color: var(--muted); }
+    .card p:last-child{ margin-bottom: 0; }
 
     .highlights{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:10px;
+      gap: 12px;
     }
-    .pillCard{
-      padding:14px;
-      border-radius:16px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+    .pill{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
     }
-    .pillCard strong{display:block; font-size:14px;}
-    .pillCard span{display:block; font-size:12px; color:var(--muted2); margin-top:4px;}
+    .pill .title{
+      font-weight:800;
+      margin: 0 0 4px;
+      letter-spacing: .2px;
+    }
+    .pill .sub{
+      margin:0;
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.35;
+    }
 
-    .section{margin-top:22px;}
-    .section h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:.2px;
+    /* Section cards */
+    .section{
+      margin-top: 18px;
     }
-    .section p{margin:0; color:var(--muted); line-height:1.7;}
-
-    .grid2{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-      align-items:start;
+    .sectionTitle{
+      font-size: 18px;
+      margin: 0 0 12px;
+      letter-spacing: .2px;
     }
-    @media (max-width: 900px){ .grid2{grid-template-columns:1fr;} }
 
-    .timeline .row{
+    /* Timeline */
+    .timeline{
       display:flex;
-      gap:12px;
-      padding:12px 0;
-      border-top:1px solid rgba(255,255,255,.08);
+      flex-direction:column;
+      gap: 18px;
     }
-    .timeline .row:first-child{border-top:0; padding-top:0;}
-    .badge{
-      flex:0 0 auto;
-      width:26px; height:26px; border-radius:10px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center;
-      font-size:14px;
-    }
-    .tText strong{display:block; font-size:14px;}
-    .tText span{display:block; color:var(--muted); font-size:13px; margin-top:4px; line-height:1.55;}
-
-    .workList{display:grid; gap:12px;}
-    .workItem{
-      padding:16px;
-      border-radius:16px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+    .timeline-item{
       display:flex;
-      justify-content:space-between;
-      gap:12px;
+      gap: 16px;
       align-items:flex-start;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
     }
-    .workItem h3{margin:0; font-size:14px;}
-    .workItem p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.55;}
-    .tag{
-      font-size:11px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      color:var(--muted2);
-      background:rgba(255,255,255,.04);
-      white-space:nowrap;
-      height:fit-content;
+    .timeline-item:not(:last-child){
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,.07);
     }
 
-    .btnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+    /* ✅ logo replacement */
+    .timeline-item img{
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: rgba(255,255,255,.95);
+      padding: 7px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.08);
+      flex: 0 0 auto;
+    }
+    .timeline-text h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .timeline-text p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Featured work */
+    .workRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .badge{
+      font-size: 12px;
+      color: var(--muted2);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      white-space: nowrap;
+    }
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:600;
-      font-size:13px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.18);
     }
     .btn.primary{
-      border-color: rgba(125,211,252,.35);
-      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
+      border-color: rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.45), rgba(34,211,238,.25));
     }
-    .btn:hover{transform: translateY(-1px); transition: .12s ease;}
 
-    .skills{
-      display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;
+    /* Skills */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
     }
-    .skill{
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
+    .chip{
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    /* Contact */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     footer{
-      margin-top:22px;
+      margin-top: 20px;
+      color: rgba(238,242,255,.45);
+      font-size: 12px;
       display:flex;
       justify-content:space-between;
-      gap:14px;
-      color:rgba(255,255,255,.45);
-      font-size:12px;
-      padding:12px 2px 0;
+      gap: 10px;
+      flex-wrap:wrap;
+      padding: 12px 4px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .navlinks{ display:none; }
+      .contactGrid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div class="nav">
-    <div class="navInner">
+  <div class="topbar">
+    <div class="nav">
       <div class="brand">
-        <span class="dot"></span>
+        <span class="brand-dot"></span>
         <span>Efemena Abogidi</span>
       </div>
-      <div class="menu">
+      <div class="navlinks">
         <a href="#about">About</a>
-        <a href="#career">Career</a>
+        <a href="#timeline">Career</a>
         <a href="#work">Work</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -254,187 +315,169 @@
   </div>
 
   <div class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div>
-        <div class="kicker">PROFESSIONAL ATHLETE • GIS & SPATIAL DATA ANALYST</div>
-        <h1>Efemena “Efe” Abogidi</h1>
-        <p class="lead">
-          Efemena “Efe” Abogidi is a professional basketball player in the NBA G League and an emerging GIS & spatial data analyst.
-          He combines elite sport discipline with technical problem-solving skills, turning complex geographic data into clear insights that support
-          urban planning, public health, and climate resilience.
-        </p>
+    <section class="hero" id="home">
+      <div class="kicker">PROFESSIONAL ATHLETE • GIS & SPATIAL DATA ANALYST</div>
+      <h1>Efemena “Efe” Abogidi</h1>
+      <p class="lead">
+        Efemena “Efe” Abogidi is a professional basketball player and emerging GIS & spatial data analyst with an international
+        background in high-performance sport and data-driven problem solving. His work focuses on turning complex geographic
+        data into clear, meaningful insights that connect environmental patterns, communities, and real-world decisions.
+      </p>
 
-        <div class="section card pad" style="margin-top:18px;">
-          <h2 style="margin:0 0 8px; font-size:16px;">About</h2>
+      <div class="grid">
+        <!-- About card -->
+        <div class="card" id="about">
+          <h2>About</h2>
           <p>
-            Efemena “Efe” Abogidi’s career has been shaped by two demanding worlds: high-performance basketball and data-driven spatial analysis.
-            Born in Nigeria, he developed through the NBA’s global pathway, training in elite academy environments and competing at the NCAA Division I level
-            before moving into professional basketball.
+            Efemena “Efe” Abogidi is a professional basketball player and developing GIS and spatial data analyst with an
+            international journey shaped by both elite sport and academic growth.
           </p>
-          <p style="margin-top:10px;">
-            Alongside his athletic career, Abogidi has built strong technical foundations in GIS, spatial analysis, and mapping through his studies at Arizona State University.
-            His work focuses on connecting environmental patterns with community realities. He’s drawn to projects that blend remote sensing, demographic data, and clear cartographic design to tell stories that decision-makers can use.
+          <p>
+            Born in Nigeria, he came through the NBA’s global development pathway—training at NBA Academy Africa and later the NBA
+            Global Academy in Canberra, Australia. Competing across different countries helped build adaptability, discipline,
+            and comfort performing in high-pressure environments.
+          </p>
+          <p>
+            Alongside his athletic career, Abogidi has developed a strong foundation in GIS, mapping, and spatial data analysis.
+            He is especially interested in work that connects environmental patterns, community conditions, and decision-making—
+            with a focus on clarity, thoughtful analysis, and communication that makes complex spatial information accessible.
           </p>
         </div>
-      </div>
 
-      <div class="card pad">
-        <p class="cardTitle">Quick Highlights</p>
-        <div class="highlights">
-          <div class="pillCard">
-            <strong>NBA G League</strong>
-            <span>Professional career level</span>
-          </div>
-          <div class="pillCard">
-            <strong>GIS Projects</strong>
-            <span>Spatial analysis & mapping</span>
-          </div>
-          <div class="pillCard">
-            <strong>International</strong>
-            <span>Nigeria • Australia • USA</span>
-          </div>
-          <div class="pillCard">
-            <strong>ASU</strong>
-            <span>Anthropology + GIS</span>
-          </div>
-        </div>
-
-        <hr class="hr" />
-
-        <p class="cardTitle" style="margin-bottom:8px;">Focus</p>
-        <p style="margin:0; color:var(--muted); font-size:13px; line-height:1.6;">
-          GIS storytelling, heat & vulnerability research, remote sensing (NDVI/LST),
-          and clean cartographic design that communicates clearly.
-        </p>
-      </div>
-    </section>
-
-    <!-- CAREER + WORK -->
-    <section class="grid2 section" id="career">
-      <div class="card pad">
-        <h2 style="margin:0 0 10px;">Career Timeline</h2>
-        <div class="timeline">
-          <div class="row">
-            <div class="badge">🇳🇬</div>
-            <div class="tText">
-              <strong>Early Development - Nigeria</strong>
-              <span>Abogidi began his basketball journey in Nigeria, where his size, mobility, and work ethic quickly stood out.</span>
+        <!-- Highlights card -->
+        <div class="card">
+          <h2>Quick Highlights</h2>
+          <div class="highlights">
+            <div class="pill">
+              <div class="title">NBA G League</div>
+              <p class="sub">Professional career level</p>
+            </div>
+            <div class="pill">
+              <div class="title">GIS Projects</div>
+              <p class="sub">Spatial analysis & mapping</p>
+            </div>
+            <div class="pill">
+              <div class="title">International</div>
+              <p class="sub">Nigeria • Australia • USA</p>
+            </div>
+            <div class="pill">
+              <div class="title">ASU</div>
+              <p class="sub">Anthropology + GIS</p>
             </div>
           </div>
-
-          <div class="row">
-            <div class="badge">🌍</div>
-            <div class="tText">
-              <strong>NBA Global Development Pathway</strong>
-              <span>He trained in NBA academy environments, accelerating his development through structured, high-level international competition.</span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="badge">🎓</div>
-            <div class="tText">
-              <strong>NCAA Division - Washington State University</strong>
-              <span>At Washington State, he competed in the Pac-12 and earned a reputation for defensive impact, rebounding, and steady growth.</span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="badge">🔥</div>
-            <div class="tText">
-              <strong>NBA G League Ignite</strong>
-              <span>After college, Abogidi continued his pro development in a program built to prepare players for the next level.</span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="badge">🏀</div>
-            <div class="tText">
-              <strong>NBA G League - Rio Grande Valley Vipers</strong>
-              <span>Abogidi plays professionally with the Rio Grande Valley Vipers, continuing to develop his game at a high level.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card pad" id="work">
-        <h2 style="margin:0 0 10px;">Featured Spatial Work</h2>
-
-        <div class="workList">
-          <div class="workItem">
-            <div>
-              <h3>Urban Heat Vulnerability - Phoenix, AZ</h3>
-              <p>Neighborhood-level spatial analysis combining land surface temperature, vegetation (NDVI), and demographic vulnerability to understand heat exposure.</p>
-            </div>
-            <span class="tag">Case Study</span>
-          </div>
-
-          <div class="workItem">
-            <div>
-              <h3>Cooling Center Accessibility — Phoenix (Method Focus)</h3>
-              <p>Travel-time and proximity thinking for extreme heat response, how access and distance shape real-world risk during heat events.</p>
-            </div>
-            <span class="tag">Network</span>
-          </div>
-
-          <div class="workItem">
-            <div>
-              <h3>Health & Inequality Mapping — Phoenix, AZ</h3>
-              <p>Mapping patterns in neighborhood conditions, exposure, and community outcomes to support clearer conversations about equity and planning.</p>
-            </div>
-            <span class="tag">Public Health</span>
-          </div>
-
-          <div class="workItem">
-            <div>
-              <h3>Cartographic Design Samples</h3>
-              <p>Clean layouts, labeling hierarchy, and symbology choices built for clarity, maps that look professional and communicate fast.</p>
-            </div>
-            <span class="tag">Design</span>
-          </div>
-        </div>
-
-        <div class="btnRow">
-          <a class="btn primary" href="urban-heat-phoenix.html">Open Urban Heat Project</a>
-          <a class="btn" href="https://arcg.is/1bDLz00" target="_blank" rel="noopener">View StoryMap</a>
-          <a class="btn" href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">View StoryMap (Full)</a>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section card pad" id="skills">
-      <h2 style="margin:0 0 10px;">Skills & Focus Areas</h2>
-      <div class="skills">
-        <span class="skill">ArcGIS Pro</span>
-        <span class="skill">Spatial Analysis</span>
-        <span class="skill">Raster Data</span>
-        <span class="skill">Remote Sensing (NDVI / LST)</span>
-        <span class="skill">Cartographic Design</span>
-        <span class="skill">StoryMaps</span>
-        <span class="skill">Data Interpretation</span>
-        <span class="skill">Spatial Storytelling</span>
+    <!-- Career Timeline -->
+    <section class="section card" id="timeline">
+      <h2 class="sectionTitle">Career Timeline</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg" alt="Nigeria">
+          <div class="timeline-text">
+            <h3>Early Development — Nigeria</h3>
+            <p>Abogidi began his basketball journey in Nigeria, where his size, mobility, and work ethic quickly stood out.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/21/NBA_Academy_logo.svg/512px-NBA_Academy_logo.svg.png" alt="NBA Academy">
+          <div class="timeline-text">
+            <h3>NBA Global Development Pathway</h3>
+            <p>He trained in NBA academy environments, accelerating his development through structured, high-level international competition.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Washington_State_Cougars_logo.svg/512px-Washington_State_Cougars_logo.svg.png" alt="Washington State University">
+          <div class="timeline-text">
+            <h3>NCAA Division I — Washington State University</h3>
+            <p>At Washington State, he competed in the Pac-12 and earned a reputation for defensive impact, rebounding, and steady growth.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/NBA_G_League_Ignite_logo.svg/512px-NBA_G_League_Ignite_logo.svg.png" alt="NBA G League Ignite">
+          <div class="timeline-text">
+            <h3>NBA G League Ignite</h3>
+            <p>After college, Abogidi continued his pro development in a program built to prepare players for the next level.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Rio_Grande_Valley_Vipers_logo.svg/512px-Rio_Grande_Valley_Vipers_logo.svg.png" alt="Rio Grande Valley Vipers">
+          <div class="timeline-text">
+            <h3>NBA G League — Rio Grande Valley Vipers</h3>
+            <p>Abogidi plays professionally with the Rio Grande Valley Vipers, continuing to develop his game at a high level.</p>
+          </div>
+        </div>
       </div>
-      <p style="margin-top:12px; color:var(--muted);">
-        His background in high-level sport shapes how he approaches technical work with discipline, structured processes, attention to detail,
-        and steady improvement over time.
+    </section>
+
+    <!-- Featured Spatial Work -->
+    <section class="section card" id="work">
+      <div class="workRow">
+        <div>
+          <h2 class="sectionTitle" style="margin-bottom:6px;">Featured Spatial Work</h2>
+          <p style="margin:0;color:var(--muted2);font-size:13px;">
+            Selected case study showcasing spatial analysis, remote sensing, and storytelling.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px; background: rgba(255,255,255,.04); box-shadow:none;">
+        <div class="workRow">
+          <div>
+            <h2 style="margin:0 0 6px; font-size:16px;">Urban Heat Vulnerability — Phoenix, AZ</h2>
+            <p style="margin:0;color:var(--muted);font-size:14px;">
+              Neighborhood-level spatial analysis combining land surface temperature, vegetation index, and demographic vulnerability data to understand extreme heat exposure.
+            </p>
+          </div>
+          <div class="badge">Case Study</div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="urban-heat-phoenix.html">Open Project</a>
+          <a class="btn" href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">View StoryMap</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section card" id="skills">
+      <h2 class="sectionTitle">Skills & Focus Areas</h2>
+      <div class="chips">
+        <span class="chip">ArcGIS Pro</span>
+        <span class="chip">Spatial Analysis</span>
+        <span class="chip">Raster Data</span>
+        <span class="chip">Remote Sensing (NDVI / LST)</span>
+        <span class="chip">Cartographic Design</span>
+        <span class="chip">StoryMaps</span>
+        <span class="chip">Data Interpretation</span>
+        <span class="chip">Spatial Storytelling</span>
+      </div>
+      <p style="margin-top:12px;color:var(--muted2);font-size:13px;">
+        His background in high-level sport shapes how he approaches technical work — with discipline, structured processes, attention to detail, and steady improvement over time.
       </p>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section card pad" id="contact">
-      <h2 style="margin:0 0 10px;">Contact</h2>
-      <p style="margin:0; color:var(--muted);">
-        If you’d like to collaborate, discuss GIS work, or just to connect professionally:
+    <!-- Contact -->
+    <section class="section card" id="contact">
+      <h2 class="sectionTitle">Contact</h2>
+      <p style="margin:0;color:var(--muted);font-size:14px;">
+        For collaboration, GIS opportunities, or professional connections:
       </p>
 
-      <div class="btnRow" style="margin-top:12px;">
-        <a class="btn primary" href="mailto:efeabogidi@gmail.com">Email Me</a>
+      <div class="contactGrid">
+        <a class="btn" href="mailto:efeabogidi@gmail.com">Email Me</a>
         <a class="btn" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312" target="_blank" rel="noopener">LinkedIn</a>
       </div>
 
-      <p style="margin-top:12px; color:var(--muted2); font-size:12px;">
-        Email: efeabogidi@gmail.com • LinkedIn: efemena-abogidi-a358b5312
+      <p style="margin-top:12px;color:var(--muted2);font-size:13px;">
+        Email: <strong style="color:var(--text)">efeabogidi@gmail.com</strong><br/>
+        LinkedIn: <strong style="color:var(--text)">efemena-abogidi</strong>
       </p>
     </section>
 
