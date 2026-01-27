@@ -2,96 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Urban Heat Vulnerability — Phoenix, AZ</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="container">
 
-    <div class="nav">
-      <a class="brand" href="index.html">← Back</a>
-      <div class="navlinks">
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Efemena Abogidi</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html#work">← Back</a>
         <a href="#overview">Overview</a>
+        <a href="#methods">Methods</a>
         <a href="#storymap">StoryMap</a>
-      </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <h1 class="title" style="margin-bottom:6px;">Urban Heat Vulnerability — Phoenix, AZ</h1>
-      <p class="tagline">
-        A neighborhood-level analysis of extreme heat exposure and vulnerability using environmental + demographic indicators.
+  <main class="container">
+    <section class="hero" id="overview">
+      <div class="kicker">Case Study</div>
+      <h1>Urban Heat Vulnerability — Phoenix, AZ</h1>
+      <p class="subtitle">
+        This project analyzes neighborhood-level vulnerability to extreme heat in Phoenix, Arizona.
+        It combines environmental conditions (LST, vegetation), socioeconomic indicators, and accessibility concepts
+        to identify communities most at risk.
       </p>
+    </section>
 
-      <div class="badges">
-        <div class="badge">Landsat (LST)</div>
-        <div class="badge">NDVI</div>
-        <div class="badge">Census Demographics</div>
-        <div class="badge">ArcGIS Pro</div>
-      </div>
+    <section class="section card" id="methods">
+      <div class="card-pad">
+        <div class="section-title">
+          <h2>Key Questions</h2>
+        </div>
+        <div class="pills">
+          <span class="pill">Where is heat exposure highest?</span>
+          <span class="pill">How does NDVI relate to temperature?</span>
+          <span class="pill">Which communities face the most risk?</span>
+        </div>
 
-      <div class="btnrow" style="margin-top:14px;">
-        <a class="btn btnPrimary" href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">
-          View StoryMap (new tab)
-        </a>
-      </div>
-    </div>
+        <hr class="sep"/>
 
-    <div class="grid" id="overview">
-      <div class="card">
-        <h2 class="sectionTitle">Key Questions</h2>
-        <p class="p">• Which neighborhoods experience the highest heat exposure?</p>
-        <p class="p">• How do vegetation and land cover influence surface temperature?</p>
-        <p class="p">• Which populations are most vulnerable to extreme heat?</p>
+        <div class="section-title">
+          <h2>Data & Methods</h2>
+        </div>
 
-        <div class="hr"></div>
-
-        <h2 class="sectionTitle">Methods (high level)</h2>
-        <p class="p">• Derived land surface temperature (LST) and vegetation (NDVI)</p>
-        <p class="p">• Joined demographic indicators at neighborhood/tract level</p>
-        <p class="p">• Compared spatial patterns to identify high-risk areas</p>
-      </div>
-
-      <div class="card">
-        <h2 class="sectionTitle">Outcome</h2>
-        <p class="p">
-          The results highlight spatial inequities in heat exposure and provide insight for urban planning,
-          public health, and climate resilience strategies.
+        <p>
+          Core layers typically include land surface temperature, vegetation index (NDVI), and demographic vulnerability indicators.
+          The workflow uses GIS joins, zonal statistics, and map design in ArcGIS Pro to summarize patterns at neighborhood/tract scales.
         </p>
 
-        <div class="hr"></div>
-
-        <h2 class="sectionTitle">Skills demonstrated</h2>
-        <div class="badges">
-          <div class="badge">Spatial Join</div>
-          <div class="badge">Zonal Statistics</div>
-          <div class="badge">Thematic Mapping</div>
-          <div class="badge">Interpretation</div>
+        <div class="pills">
+          <span class="pill">Landsat LST</span>
+          <span class="pill">NDVI</span>
+          <span class="pill">U.S. Census</span>
+          <span class="pill">Spatial Joins</span>
+          <span class="pill">Zonal Statistics</span>
+          <span class="pill">Choropleth Mapping</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card" id="storymap" style="margin-top:18px;">
-      <h2 class="sectionTitle">Interactive StoryMap</h2>
-      <p class="p">Embedded view (if your StoryMap allows embedding):</p>
+    <section class="section card" id="storymap">
+      <div class="card-pad">
+        <div class="section-title">
+          <h2>Interactive StoryMap</h2>
+          <span class="tag">ArcGIS StoryMaps</span>
+        </div>
 
-      <!-- BEST METHOD:
-           In ArcGIS StoryMaps: Share → Embed → copy iframe code.
-           Paste that iframe below. Some stories require enabling advanced embedding + allowed domains. -->
-      <div class="embedWrap">
-        <iframe class="embed"
-          src="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+        <p>
+          View the full interactive narrative and maps here:
+        </p>
+
+        <div class="btns" style="justify-content:flex-start;">
+          <a class="btn primary" target="_blank"
+             href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf">
+            Open StoryMap
+          </a>
+          <a class="btn" href="index.html#work">Back to Home</a>
+        </div>
       </div>
+    </section>
 
-      <div class="footer">
-        If the embed shows a restriction, use the button above or enable advanced embedding + allowed domains in Story Settings. :contentReference[oaicite:0]{index=0}
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Efemena Abogidi</div>
+        <div class="small-muted">Project: Urban Heat Vulnerability</div>
       </div>
-    </div>
+    </footer>
+  </main>
 
-  </div>
+  <script src="assets/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
