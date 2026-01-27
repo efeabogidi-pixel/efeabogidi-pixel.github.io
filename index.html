@@ -1,213 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Efemena Abogidi | GIS Portfolio</title>
-
-  <!-- Font (Google) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.08);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.7);
-      --line:rgba(234,240,255,.12);
-      --accent:#7c3aed;   /* purple */
-      --accent2:#22d3ee;  /* cyan */
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(124,58,237,.35), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(34,211,238,.25), transparent 60%),
-        radial-gradient(900px 500px at 60% 90%, rgba(124,58,237,.18), transparent 60%),
-        var(--bg);
-      min-height:100vh;
-    }
-
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1050px; margin:0 auto; padding:28px 18px 60px;}
-    .topbar{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 16px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      border-radius:999px; backdrop-filter: blur(10px);
-    }
-    .brand{font-weight:700; letter-spacing:.2px}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:8px 12px; border-radius:999px;
-      color:var(--muted); font-size:13px;
-    }
-    .hero{
-      margin-top:22px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .hero-inner{padding:34px 28px;}
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--muted); font-size:13px;
-    }
-    .title{
-      margin:16px 0 10px;
-      font-size:48px; line-height:1.05;
-      letter-spacing:-.8px;
-    }
-    .subtitle{
-      margin:0;
-      font-size:16px;
-      color:var(--muted);
-      max-width:72ch;
-      line-height:1.6;
-    }
-    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:600;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10); border-color:rgba(234,240,255,.22);}
-    .btn.primary{
-      border:none;
-      background:linear-gradient(90deg, var(--accent), var(--accent2));
-      color:#061018;
-    }
-
-    .grid{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr;} .title{font-size:40px;} }
-
-    .card{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.30);
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    .muted{color:var(--muted); line-height:1.65; font-size:14px;}
-    .project{
-      display:flex; justify-content:space-between; gap:12px;
-      align-items:center;
-      padding:14px;
-      margin-top:12px;
-      border-radius:14px;
-      border:1px solid rgba(234,240,255,.14);
-      background:rgba(255,255,255,.06);
-      transition:transform .15s ease, background .15s ease;
-    }
-    .project:hover{transform:translateY(-1px); background:rgba(255,255,255,.10);}
-    .project-title{font-weight:700}
-    .project-meta{font-size:13px; color:var(--muted); margin-top:4px;}
-    .badge{
-      font-size:12px; font-weight:700;
-      padding:7px 10px; border-radius:999px;
-      background:rgba(124,58,237,.18);
-      border:1px solid rgba(124,58,237,.35);
-      color:#e9ddff;
-      white-space:nowrap;
-    }
-
-    .footer{
-      margin-top:18px;
-      color:rgba(234,240,255,.55);
-      font-size:12px;
-      text-align:center;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
   <div class="container">
-    <div class="topbar">
-      <div class="brand">EA • GIS Portfolio</div>
-      <div class="pill">📍 Phoenix-focused spatial analysis</div>
+
+    <div class="nav">
+      <a class="brand" href="index.html">Efemena Abogidi</a>
+      <div class="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="kicker">🏀 Professional Athlete • 🗺️ GIS & Spatial Data Analyst</div>
-        <h1 class="title">Efemena Abogidi</h1>
-        <p class="subtitle">
-          I build GIS workflows and maps that explain real-world problems — combining spatial analysis, environmental data,
-          and demographic context to support planning and public health decisions.
-        </p>
+    <div class="hero">
+      <h1 class="title">Efemena Abogidi</h1>
+      <p class="tagline">Professional Athlete • GIS & Spatial Data Analyst</p>
 
-        <div class="actions">
-          <a class="btn primary" href="urban-heat-phoenix.html">View Featured Project</a>
-          <a class="btn" href="mailto:efeabogidi@gmail.com">Email Me</a>
-          <a class="btn" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="badges">
+        <div class="badge">ArcGIS Pro</div>
+        <div class="badge">Spatial Analysis</div>
+        <div class="badge">Cartography</div>
+        <div class="badge">Remote Sensing</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2 class="sectionTitle">About</h2>
+        <p class="p">
+          I’m a GIS and spatial data analyst with a background in high-performance athletics.
+          I focus on spatial analysis, mapping, and data-driven problem solving.
+        </p>
+        <div class="btnrow">
+          <a class="btn btnPrimary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
-    </section>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Featured Project</h2>
+      <div class="card" id="contact">
+        <h2 class="sectionTitle">Contact</h2>
+        <p class="p">If you’d like to collaborate, discuss GIS work, or connect professionally:</p>
+        <div class="btnrow">
+          <a class="btn small" href="mailto:efeabogidi@gmail.com">Email</a>
+          <a class="btn small" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer">© <script>document.write(new Date().getFullYear())</script> Efemena Abogidi</div>
+      </div>
+    </div>
+
+    <div class="card" id="projects" style="margin-top:18px;">
+      <h2 class="sectionTitle">Projects</h2>
+
+      <div class="projects">
         <a class="project" href="urban-heat-phoenix.html">
           <div>
-            <div class="project-title">Urban Heat Vulnerability (Phoenix, AZ)</div>
-            <div class="project-meta">LST + NDVI + Census demographics + accessibility context</div>
+            <h3>Urban Heat Vulnerability — Phoenix, AZ</h3>
+            <p>Neighborhood-level heat risk analysis combining land surface temperature, NDVI, and demographic vulnerability.</p>
           </div>
-          <div class="badge">Open →</div>
+          <div class="projectMeta">StoryMap + Methods</div>
         </a>
-
-        <p class="muted" style="margin-top:12px;">
-          Next, we can add more projects, thumbnails, and a resume download — so this looks like a top-tier GIS portfolio.
-        </p>
       </div>
+    </div>
 
-      <div class="card">
-        <h2>Contact</h2>
-        <p class="muted" style="margin:0 0 12px;">
-          If you’d like to collaborate, discuss GIS work, or connect professionally:
-        </p>
-        <div class="actions" style="margin:0;">
-          <a class="btn" href="mailto:efeabogidi@gmail.com">✉️ efeabogidi@gmail.com</a>
-          <a class="btn" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312" target="_blank" rel="noopener">in LinkedIn</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">© <span id="y"></span> Efemena Abogidi • Built with GitHub Pages</div>
   </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
