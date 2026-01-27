@@ -1,147 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Urban Heat Vulnerability — Phoenix, AZ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:rgba(255,255,255,.06);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.72);
-      --line:rgba(234,240,255,.12);
-      --accent:#7c3aed;
-      --accent2:#22d3ee;
-      --radius:18px;
-      --shadow:0 18px 60px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(124,58,237,.30), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(34,211,238,.22), transparent 60%),
-        var(--bg);
-      min-height:100vh;
-    }
-    .container{max-width:980px; margin:0 auto; padding:28px 18px 60px;}
-    .nav{
-      display:flex; gap:10px; align-items:center; justify-content:space-between;
-      padding:14px 16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-      backdrop-filter: blur(10px);
-    }
-    .nav a{color:var(--muted); text-decoration:none; font-weight:600}
-    .nav a:hover{color:var(--text)}
-    .pill{
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--muted); font-size:13px;
-    }
-
-    .hero{
-      margin-top:18px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:26px;
-    }
-    h1{margin:0 0 10px; font-size:34px; letter-spacing:-.5px;}
-    .lead{margin:0; color:var(--muted); line-height:1.7;}
-
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px;}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr;} }
-
-    .card{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      border-radius:var(--radius);
-      padding:18px;
-    }
-    h2{margin:0 0 10px; font-size:16px;}
-    ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.7;}
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:700;
-      text-decoration:none;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10); border-color:rgba(234,240,255,.22);}
-    .btn.primary{
-      border:none;
-      background:linear-gradient(90deg, var(--accent), var(--accent2));
-      color:#061018;
-    }
-    .note{color:rgba(234,240,255,.55); font-size:12px; margin-top:10px;}
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
   <div class="container">
+
     <div class="nav">
-      <a href="index.html">← Back</a>
-      <div class="pill">Project • GIS • Spatial Analysis</div>
+      <a class="brand" href="index.html">← Back</a>
+      <div class="navlinks">
+        <a href="#overview">Overview</a>
+        <a href="#storymap">StoryMap</a>
+      </div>
     </div>
 
-    <section class="hero">
-      <h1>Urban Heat Vulnerability — Phoenix, AZ</h1>
-      <p class="lead">
-        This project analyzes neighborhood-level vulnerability to extreme heat in Phoenix, Arizona. It integrates environmental
-        indicators and demographic context to identify communities most at risk and support climate resilience planning.
+    <div class="card">
+      <h1 class="title" style="margin-bottom:6px;">Urban Heat Vulnerability — Phoenix, AZ</h1>
+      <p class="tagline">
+        A neighborhood-level analysis of extreme heat exposure and vulnerability using environmental + demographic indicators.
       </p>
 
-      <div class="actions">
-        <a class="btn primary" href="https://arcg.is/1bDLz00" target="_blank" rel="noopener">View Interactive StoryMap</a>
-        <a class="btn" href="mailto:efeabogidi@gmail.com">Contact</a>
+      <div class="badges">
+        <div class="badge">Landsat (LST)</div>
+        <div class="badge">NDVI</div>
+        <div class="badge">Census Demographics</div>
+        <div class="badge">ArcGIS Pro</div>
       </div>
-      <div class="note">Tip: next we can add screenshots of your maps right on this page.</div>
-    </section>
 
-    <section class="grid">
+      <div class="btnrow" style="margin-top:14px;">
+        <a class="btn btnPrimary" href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">
+          View StoryMap (new tab)
+        </a>
+      </div>
+    </div>
+
+    <div class="grid" id="overview">
       <div class="card">
-        <h2>Key Questions</h2>
-        <ul>
-          <li>Which neighborhoods experience the highest heat exposure?</li>
-          <li>How do vegetation and land cover influence surface temperature?</li>
-          <li>Which populations are most vulnerable to extreme heat?</li>
-        </ul>
+        <h2 class="sectionTitle">Key Questions</h2>
+        <p class="p">• Which neighborhoods experience the highest heat exposure?</p>
+        <p class="p">• How do vegetation and land cover influence surface temperature?</p>
+        <p class="p">• Which populations are most vulnerable to extreme heat?</p>
+
+        <div class="hr"></div>
+
+        <h2 class="sectionTitle">Methods (high level)</h2>
+        <p class="p">• Derived land surface temperature (LST) and vegetation (NDVI)</p>
+        <p class="p">• Joined demographic indicators at neighborhood/tract level</p>
+        <p class="p">• Compared spatial patterns to identify high-risk areas</p>
       </div>
 
       <div class="card">
-        <h2>Data & Methods</h2>
-        <ul>
-          <li>Land Surface Temperature (Landsat)</li>
-          <li>NDVI (Vegetation Index)</li>
-          <li>U.S. Census demographic data</li>
-          <li>Spatial joins and zonal statistics in ArcGIS Pro</li>
-        </ul>
-      </div>
-
-      <div class="card" style="grid-column: 1 / -1;">
-        <h2>Outcome</h2>
-        <p class="lead" style="margin:0;">
-          Results highlight spatial inequities in heat exposure and provide insight for urban planning, public health,
-          and climate resilience strategies.
+        <h2 class="sectionTitle">Outcome</h2>
+        <p class="p">
+          The results highlight spatial inequities in heat exposure and provide insight for urban planning,
+          public health, and climate resilience strategies.
         </p>
+
+        <div class="hr"></div>
+
+        <h2 class="sectionTitle">Skills demonstrated</h2>
+        <div class="badges">
+          <div class="badge">Spatial Join</div>
+          <div class="badge">Zonal Statistics</div>
+          <div class="badge">Thematic Mapping</div>
+          <div class="badge">Interpretation</div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div class="card" id="storymap" style="margin-top:18px;">
+      <h2 class="sectionTitle">Interactive StoryMap</h2>
+      <p class="p">Embedded view (if your StoryMap allows embedding):</p>
+
+      <!-- BEST METHOD:
+           In ArcGIS StoryMaps: Share → Embed → copy iframe code.
+           Paste that iframe below. Some stories require enabling advanced embedding + allowed domains. -->
+      <div class="embedWrap">
+        <iframe class="embed"
+          src="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="footer">
+        If the embed shows a restriction, use the button above or enable advanced embedding + allowed domains in Story Settings. :contentReference[oaicite:0]{index=0}
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
+
