@@ -1,23 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Efemena “Efe” Abogidi | Portfolio</title>
-  <meta name="description" content="Professional Athlete • GIS & Spatial Data Analyst — portfolio, projects, and contact." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Efemena “Efe” Abogidi — Portfolio</title>
+  <meta name="description" content="Efemena “Efe” Abogidi — professional athlete and GIS & spatial data analyst. Projects, career timeline, skills, and contact." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-  <!-- Top glow background -->
-  <div class="bg"></div>
-
   <!-- NAV -->
   <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-dot"></span>
-        <span class="brand-name">Efemena Abogidi</span>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Efemena Abogidi</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -28,12 +25,12 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
 
-    <div class="wrap nav-mobile" id="mobileNav" hidden>
+    <div class="container mobile" id="mobileNav" hidden>
       <a href="#about">About</a>
       <a href="#career">Career</a>
       <a href="#work">Work</a>
@@ -42,96 +39,96 @@
     </div>
   </header>
 
-  <main id="top" class="wrap">
-
+  <main id="top" class="container">
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-left">
-        <div class="kicker">PROFESSIONAL ATHLETE • GIS & SPATIAL DATA ANALYST</div>
-        <h1>Efemena <span class="quote">“Efe”</span> Abogidi</h1>
+      <div class="hero-text">
+        <div class="eyebrow">Professional Athlete • GIS & Spatial Data Analyst</div>
+        <h1>Efemena <span class="muted-strong">“Efe”</span> Abogidi</h1>
 
         <p class="lead">
           Efemena “Efe” Abogidi is a professional basketball player and an emerging GIS & spatial data analyst.
-          His work blends high-performance discipline with spatial thinking—turning geographic data into clear,
-          decision-ready insights tied to people, places, and real-world outcomes.
+          He brings the structure and discipline of elite sport into spatial work—clean analysis, clear visuals,
+          and decision-ready insights tied to people and place.
         </p>
 
-        <div class="cta-row">
+        <div class="actions">
           <a class="btn primary" href="#work">View Projects</a>
           <a class="btn" href="#contact">Contact</a>
-          <a class="btn ghost" target="_blank" rel="noreferrer"
-             href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">LinkedIn</a>
+          <a class="btn ghost" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">
+            LinkedIn
+          </a>
         </div>
 
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-top">🏀</div>
-            <div class="stat-main">NBA G League</div>
-            <div class="stat-sub">Professional level</div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-top">🏀</div>
+            <div class="metric-main">NBA G League</div>
+            <div class="metric-sub">Professional experience</div>
           </div>
-          <div class="stat">
-            <div class="stat-top">🗺️</div>
-            <div class="stat-main">GIS Projects</div>
-            <div class="stat-sub">Spatial analysis & mapping</div>
+          <div class="metric">
+            <div class="metric-top">🗺️</div>
+            <div class="metric-main">GIS Projects</div>
+            <div class="metric-sub">Spatial analysis & mapping</div>
           </div>
-          <div class="stat">
-            <div class="stat-top">🌍</div>
-            <div class="stat-main">International</div>
-            <div class="stat-sub">Nigeria • Australia • USA</div>
+          <div class="metric">
+            <div class="metric-top">🌍</div>
+            <div class="metric-main">International</div>
+            <div class="metric-sub">Nigeria • Australia • USA</div>
           </div>
-          <div class="stat">
-            <div class="stat-top">🎓</div>
-            <div class="stat-main">ASU Online</div>
-            <div class="stat-sub">Anthropology + GIS</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="portrait-card">
-          <!-- IMPORTANT: upload your image as assets/profile.png -->
-          <img class="portrait" src="assets/profile.png" alt="Efemena Abogidi portrait" />
-          <div class="portrait-glow"></div>
-
-          <div class="portrait-meta">
-            <div class="portrait-name">Efemena “Efe” Abogidi</div>
-            <div class="portrait-role">Professional Athlete • GIS & Spatial Data</div>
+          <div class="metric">
+            <div class="metric-top">🎓</div>
+            <div class="metric-main">ASU Online</div>
+            <div class="metric-sub">Anthropology + GIS</div>
           </div>
         </div>
       </div>
+
+      <aside class="hero-card">
+        <!-- Optional image. If you don’t want images, delete this <img> block entirely. -->
+        <img class="avatar" src="assets/profile.png" alt="Efemena Abogidi portrait" onerror="this.style.display='none'">
+        <div class="card-body">
+          <div class="card-title">Focus</div>
+          <ul class="clean-list">
+            <li>Urban heat & community risk</li>
+            <li>Spatial storytelling (StoryMaps)</li>
+            <li>Raster + vector workflows</li>
+            <li>Clean cartographic design</li>
+          </ul>
+          <div class="card-note">
+            Email: <a href="mailto:efeabogidi@gmail.com">efeabogidi@gmail.com</a>
+          </div>
+        </div>
+      </aside>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="section-head">
         <h2>About</h2>
-        <p class="muted">
-          A career built on elite performance, international experience, and data-driven work.
+        <p>
+          Abogidi’s background spans Nigeria, Australia, and the United States. His path runs through elite development
+          programs, NCAA Division I competition, and the NBA G League. He studies Anthropology with a GIS minor at
+          Arizona State University (ASU Online), and he’s especially interested in work that connects environment,
+          community conditions, and real decision-making.
         </p>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Overview</h3>
+      <div class="grid two">
+        <div class="panel">
+          <h3>What he’s known for</h3>
           <p>
-            Born in Nigeria, Abogidi’s path has moved through major development environments, NCAA Division I competition,
-            and professional basketball in the NBA G League. That same focus and consistency shows up in his GIS work:
-            structured analysis, clean cartography, and communication that makes complex spatial patterns easier to understand.
-          </p>
-          <p>
-            He studies Anthropology with a GIS minor at Arizona State University (ASU Online) and is especially interested in work
-            connected to urban heat, environmental risk, and spatial equity—projects that connect community conditions to practical planning decisions.
+            Reliable execution, strong work ethic, and steady improvement—on the court and in technical work.
+            In GIS, that becomes structured workflows, careful spatial reasoning, and clear communication.
           </p>
         </div>
 
-        <div class="card">
-          <h3>What he brings</h3>
-          <ul class="bullets">
-            <li><span class="b">Discipline:</span> high-performance habits and consistency under pressure.</li>
-            <li><span class="b">Clarity:</span> maps and visuals that communicate quickly and cleanly.</li>
-            <li><span class="b">Workflow:</span> structured GIS processes with strong organization.</li>
-            <li><span class="b">Impact:</span> projects focused on real communities and real decisions.</li>
-          </ul>
+        <div class="panel">
+          <h3>What he builds</h3>
+          <p>
+            Projects that are clean, readable, and useful: maps that explain patterns quickly, analysis that
+            holds up under scrutiny, and storytelling that keeps the human impact visible.
+          </p>
         </div>
       </div>
     </section>
@@ -140,53 +137,49 @@
     <section class="section" id="career">
       <div class="section-head">
         <h2>Career Pathway</h2>
-        <p class="muted">A quick timeline of development and professional milestones.</p>
+        <p>A concise timeline. (We can expand this into a full “press-kit” style section later.)</p>
       </div>
 
-      <div class="card timeline">
-        <div class="t-item">
-          <div class="badge">🇳🇬</div>
-          <div class="t-body">
-            <h3>Early Development — Nigeria</h3>
-            <p>Abogidi began his basketball journey in Nigeria, where his size, mobility, and work ethic quickly stood out.</p>
+      <div class="timeline">
+        <div class="t">
+          <div class="icon">🇳🇬</div>
+          <div>
+            <div class="t-title">Early Development — Nigeria</div>
+            <div class="t-desc">Abogidi began his basketball journey in Nigeria, where his size, mobility, and work ethic stood out early.</div>
           </div>
         </div>
 
-        <div class="t-item">
-          <div class="badge">🏟️</div>
-          <div class="t-body">
-            <h3>NBA Global Development Pathway / Academy</h3>
-            <p>He trained in NBA academy environments, accelerating through structured development and international competition.</p>
+        <div class="t">
+          <div class="icon">🏟️</div>
+          <div>
+            <div class="t-title">NBA Global Development Pathway / Academy</div>
+            <div class="t-desc">He trained in NBA academy environments, accelerating through structured development and high-level competition.</div>
           </div>
         </div>
 
-        <div class="t-item">
-          <div class="badge">🎓</div>
-          <div class="t-body">
-            <h3>NCAA Division I — Washington State University</h3>
-            <p>At Washington State, he competed in the Pac-12 and earned a reputation for defense, rebounding, and steady growth.</p>
+        <div class="t">
+          <div class="icon">🎓</div>
+          <div>
+            <div class="t-title">NCAA Division I — Washington State University</div>
+            <div class="t-desc">He competed in the Pac-12, building a reputation for defense, rebounding, and steady growth.</div>
           </div>
         </div>
 
-        <div class="t-item">
-          <div class="badge">🔥</div>
-          <div class="t-body">
-            <h3>NBA G League Ignite</h3>
-            <p>After college, Abogidi continued his pro development in a program built to prepare players for the next level.</p>
+        <div class="t">
+          <div class="icon">🔥</div>
+          <div>
+            <div class="t-title">NBA G League Ignite</div>
+            <div class="t-desc">After college, he continued his pro development in a program designed to prepare players for the next level.</div>
           </div>
         </div>
 
-        <div class="t-item">
-          <div class="badge">🐍</div>
-          <div class="t-body">
-            <h3>NBA G League — Rio Grande Valley Vipers</h3>
-            <p>He plays professionally with the Rio Grande Valley Vipers, continuing to develop his game at a high level.</p>
+        <div class="t">
+          <div class="icon">🐍</div>
+          <div>
+            <div class="t-title">NBA G League — Rio Grande Valley Vipers</div>
+            <div class="t-desc">He plays professionally with the Rio Grande Valley Vipers, continuing to develop at a high level.</div>
           </div>
         </div>
-      </div>
-
-      <div class="note muted">
-        Want the logos again later? We can re-add them once your assets folder is stable.
       </div>
     </section>
 
@@ -194,53 +187,59 @@
     <section class="section" id="work">
       <div class="section-head">
         <h2>Featured Work</h2>
-        <p class="muted">Selected GIS projects, write-ups, and interactive content.</p>
+        <p>Selected GIS work. Add more cards as you finish projects.</p>
       </div>
 
-      <div class="cards">
-        <article class="card project">
-          <div class="project-top">
+      <div class="grid cards">
+        <article class="card">
+          <div class="card-top">
             <h3>Urban Heat Vulnerability — Phoenix, AZ</h3>
-            <span class="chip">Case Study</span>
+            <span class="tag">Case Study</span>
           </div>
           <p>
-            Neighborhood-level spatial analysis combining land surface temperature, NDVI vegetation, and demographic vulnerability
-            to identify communities most at risk from extreme heat exposure.
+            Neighborhood-scale analysis combining land surface temperature, NDVI vegetation, and demographic vulnerability
+            to identify communities at elevated risk from extreme heat exposure.
           </p>
-          <div class="project-actions">
+          <div class="card-actions">
             <a class="btn primary" href="urban-heat-phoenix.html">Open Project</a>
             <a class="btn ghost" target="_blank" rel="noreferrer"
-               href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf">View StoryMap</a>
+              href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf">StoryMap</a>
           </div>
         </article>
 
-        <!-- You can duplicate this card for more projects later -->
+        <article class="card muted-card">
+          <div class="card-top">
+            <h3>Next Project</h3>
+            <span class="tag">Coming soon</span>
+          </div>
+          <p>
+            Add another GIS project here (network analysis, suitability model, story map, raster work, etc.).
+          </p>
+          <div class="card-actions">
+            <a class="btn" href="#contact">Ask for collaboration</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="section-head">
-        <h2>Skills & Focus Areas</h2>
-        <p class="muted">Tools, methods, and strengths.</p>
+        <h2>Skills</h2>
+        <p>Core tools and methods.</p>
       </div>
 
-      <div class="card">
+      <div class="panel">
         <div class="pills">
           <span class="pill">ArcGIS Pro</span>
-          <span class="pill">Spatial Joins</span>
-          <span class="pill">Zonal Statistics</span>
+          <span class="pill">Spatial Analysis</span>
+          <span class="pill">Raster Workflows</span>
           <span class="pill">Remote Sensing (NDVI / LST)</span>
-          <span class="pill">Raster + Vector Workflows</span>
           <span class="pill">Cartographic Design</span>
           <span class="pill">StoryMaps</span>
-          <span class="pill">Spatial Storytelling</span>
           <span class="pill">Data Cleaning</span>
+          <span class="pill">Spatial Storytelling</span>
         </div>
-
-        <p class="muted" style="margin-top:14px;">
-          His background in elite sport shapes how he approaches technical work—focused execution, detail, and steady improvement over time.
-        </p>
       </div>
     </section>
 
@@ -248,44 +247,37 @@
     <section class="section" id="contact">
       <div class="section-head">
         <h2>Contact</h2>
-        <p class="muted">If you’d like to collaborate, discuss GIS work, or connect professionally:</p>
+        <p>For GIS work, collaboration, or professional connection.</p>
       </div>
 
-      <div class="card contact">
+      <div class="panel contact">
         <div class="contact-row">
-          <div class="contact-item">
-            <div class="contact-label">Email</div>
-            <a class="contact-link" href="mailto:efeabogidi@gmail.com">efeabogidi@gmail.com</a>
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:efeabogidi@gmail.com">efeabogidi@gmail.com</a>
           </div>
-          <div class="contact-item">
-            <div class="contact-label">LinkedIn</div>
-            <a class="contact-link" target="_blank" rel="noreferrer"
-               href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">
-              efemena-abogidi-a358b5312
+          <div>
+            <div class="label">LinkedIn</div>
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">
+              linkedin.com/in/efemena-abogidi-a358b5312
             </a>
           </div>
         </div>
 
-        <div class="cta-row" style="justify-content:flex-start; margin-top:14px;">
+        <div class="actions" style="margin-top:14px;">
           <a class="btn primary" href="mailto:efeabogidi@gmail.com">Email Me</a>
-          <a class="btn" target="_blank" rel="noreferrer"
-             href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">LinkedIn</a>
+          <a class="btn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/efemena-abogidi-a358b5312">LinkedIn</a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Efemena Abogidi</div>
-        <div class="muted">Professional Athlete • GIS & Spatial Data</div>
-      </div>
+      <div>© <span id="year"></span> Efemena Abogidi</div>
+      <div class="foot-muted">Professional Athlete • GIS & Spatial Data</div>
     </footer>
-
   </main>
 
   <script src="assets/main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
