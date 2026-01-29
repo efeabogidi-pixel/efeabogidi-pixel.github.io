@@ -1,326 +1,231 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mapping Extreme Urban Heat Vulnerability — Phoenix, AZ | Efemena Abogidi</title>
-  <meta name="description" content="Case study by Efemena Abogidi: Mapping extreme urban heat vulnerability in Phoenix using LST, NDVI, demographics, and cooling access indicators." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Heat Vulnerability — Phoenix, AZ | Efemena Abogidi</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Urban Heat Vulnerability — Phoenix, AZ | Efemena Abogidi" />
-  <meta property="og:description" content="GIS case study integrating LST, NDVI, demographics, and cooling access to map neighborhood heat vulnerability." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/profile.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="assets/profile.png" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --stroke: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --faint: rgba(255,255,255,0.52);
+      --accent: #60a5fa;
+      --accent2: #34d399;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(96,165,250,0.18), transparent 55%),
+        radial-gradient(700px 500px at 80% 15%, rgba(52,211,153,0.14), transparent 55%),
+        radial-gradient(900px 700px at 50% 90%, rgba(167,139,250,0.10), transparent 60%),
+        var(--bg);
+    }
+    a{ color: inherit; text-decoration: none; }
+    .wrap{ width: min(1000px, 92%); margin: 0 auto; padding: 70px 0; }
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      font-weight: 800;
+      transition: 220ms ease;
+    }
+    .back:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    }
+
+    h1{
+      margin: 18px 0 10px;
+      font-size: clamp(34px, 4.5vw, 52px);
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      max-width: 860px;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14.5px;
+    }
+
+    .list{
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14.5px;
+    }
+
+    .pillrow{
+      display:flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 12px;
+    }
+    .pill{
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.86);
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 800;
+      transition: 220ms ease;
+      margin-top: 14px;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, rgba(96,165,250,0.95), rgba(52,211,153,0.92));
+      color: #07111f;
+    }
+
+    .divider{
+      margin: 18px 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    }
+
+    footer{
+      padding: 25px 0 10px;
+      color: rgba(255,255,255,0.45);
+      font-size: 13px;
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Top progress bar -->
-  <div class="progress" aria-hidden="true">
-    <div id="progressBar" class="progress__bar"></div>
+  <div class="wrap">
+    <div class="top">
+      <a class="back" href="index.html">← Back to Portfolio</a>
+      <div class="pillrow">
+        <span class="pill">📍 Phoenix, AZ</span>
+        <span class="pill">🛰️ Remote Sensing</span>
+        <span class="pill">🗺️ GIS Analysis</span>
+      </div>
+    </div>
+
+    <h1>Urban Heat Vulnerability — Phoenix, AZ</h1>
+    <p class="subtitle">
+      This project examines neighborhood-level vulnerability to extreme heat in Phoenix. It combines environmental indicators (land surface temperature and NDVI) with demographic factors to identify communities that may face higher exposure and risk.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Key Questions</h2>
+        <ul class="list">
+          <li>Which neighborhoods show the highest heat exposure?</li>
+          <li>How does vegetation (NDVI) relate to surface temperature patterns?</li>
+          <li>Which communities appear more vulnerable based on demographic context?</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Approach</h2>
+        <p>
+          The workflow integrates land surface temperature (Landsat), NDVI (vegetation index), and census-derived demographic measures.
+          Spatial joins and zonal statistics help summarize patterns at neighborhood or tract scale for comparison and communication.
+        </p>
+
+        <a class="btn primary" href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">
+          🌐 Open StoryMap
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>Data & Methods</h2>
+        <ul class="list">
+          <li>🛰️ Land Surface Temperature (Landsat)</li>
+          <li>🌿 NDVI (Vegetation Index)</li>
+          <li>🏘️ U.S. Census demographic data</li>
+          <li>🧭 Spatial joins + zonal statistics</li>
+          <li>📊 Interpretation for planning + public health</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Outcome</h2>
+        <p>
+          The results highlight spatial inequities and support clearer decision-making for heat resilience, urban planning, and community health strategies.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 Efemena Abogidi — Urban Heat Vulnerability Case Study
+    </footer>
   </div>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand__dot"></span>
-        <span class="brand__text">Efemena Abogidi</span>
-      </a>
-
-      <nav class="nav nav--desktop" aria-label="Primary">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#career">Career</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#contact" class="btn btn--small">Contact</a>
-      </nav>
-
-      <button
-        id="menuBtn"
-        class="menuBtn"
-        type="button"
-        aria-controls="mobileNav"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open menu</span>
-        <span class="menuBtn__lines" aria-hidden="true"></span>
-      </button>
-    </div>
-
-    <nav id="mobileNav" class="nav nav--mobile container" aria-label="Mobile" hidden>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#career">Career</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Case Study Hero -->
-    <section class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="kicker">GIS Case Study</p>
-          <h2>Mapping Extreme Urban Heat Vulnerability — Phoenix, Arizona</h2>
-          <p>
-            A tract-level vulnerability workflow that combines heat exposure, vegetation, demographic context,
-            and access to cooling resources to highlight where risk may be concentrated.
-          </p>
-
-          <div class="hero__cta" style="margin-top:16px">
-            <a class="btn btn--small" href="index.html#projects">← Back to Projects</a>
-            <a class="btn btn--small btn--ghost"
-               href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
-               target="_blank" rel="noreferrer">
-              View StoryMap
-            </a>
-          </div>
-
-          <div class="hero__meta" style="margin-top:14px">
-            <div class="pill">ArcGIS Pro</div>
-            <div class="pill">Raster + Vector Integration</div>
-            <div class="pill">Index Modeling</div>
-            <div class="pill">StoryMaps</div>
-          </div>
-        </div>
-
-        <!-- Highlights -->
-        <div class="grid">
-          <article class="card reveal">
-            <h3>Goal</h3>
-            <p class="muted">
-              Create a clear, decision-ready vulnerability output that helps identify which neighborhoods may face higher
-              heat risk and why — using transparent, repeatable GIS steps.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>What I built</h3>
-            <p class="muted">
-              A tract-level composite index that integrates:
-              <strong>land surface temperature</strong> (exposure),
-              <strong>NDVI</strong> (mitigation),
-              <strong>demographic vulnerability</strong>,
-              and <strong>cooling access</strong>.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Deliverables</h3>
-            <ul class="muted">
-              <li>Exposure map (LST)</li>
-              <li>Vegetation map (NDVI)</li>
-              <li>Cooling access indicator</li>
-              <li>Final vulnerability index map</li>
-              <li>StoryMap narrative for communication</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Why it matters</h3>
-            <p class="muted">
-              Heat impacts are uneven. Neighborhood conditions and resource access can amplify exposure,
-              especially for vulnerable populations. GIS helps show patterns clearly so planning and response can be targeted.
-            </p>
-          </article>
-        </div>
-
-        <!-- Method -->
-        <div class="section__head reveal" style="margin-top:56px">
-          <h2>Method</h2>
-          <p>High-level workflow (designed to be repeatable and easy to explain).</p>
-        </div>
-
-        <div class="grid">
-          <article class="card reveal">
-            <h3>1) Setup & Study Area</h3>
-            <ul class="muted">
-              <li>Defined Phoenix study area and tract geography</li>
-              <li>Standardized projections and cleaned layers</li>
-              <li>Clipped data to consistent extent</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>2) Extract Environmental Indicators</h3>
-            <ul class="muted">
-              <li>Prepared LST raster for exposure mapping</li>
-              <li>Prepared NDVI raster for vegetation / mitigation mapping</li>
-              <li>Summarized raster values to census tracts (zonal statistics)</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>3) Add Social Vulnerability Context</h3>
-            <ul class="muted">
-              <li>Joined demographic variables to tracts</li>
-              <li>Verified joins and performed basic QA checks</li>
-              <li>Created mapped indicators for comparison</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>4) Cooling Access</h3>
-            <ul class="muted">
-              <li>Prepared cooling center points</li>
-              <li>Computed proximity / access indicator (distance or service logic)</li>
-              <li>Summarized access at the tract level</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>5) Normalize & Combine</h3>
-            <ul class="muted">
-              <li>Normalized indicators to a common scale</li>
-              <li>Combined variables into a composite vulnerability index</li>
-              <li>Reviewed results for face validity and mapping clarity</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>6) Communicate Results</h3>
-            <ul class="muted">
-              <li>Designed clean thematic maps with consistent classification</li>
-              <li>Wrote a StoryMap narrative: problem → method → results → implications</li>
-              <li>Documented assumptions, limitations, and next steps</li>
-            </ul>
-          </article>
-        </div>
-
-        <!-- Tools -->
-        <div class="section__head reveal" style="margin-top:56px">
-          <h2>Tools & Techniques</h2>
-          <p>What I used and what I can repeat for similar projects.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card reveal">
-            <h3>Primary Tools</h3>
-            <p class="muted">
-              ArcGIS Pro • ArcGIS StoryMaps
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Techniques</h3>
-            <ul class="muted">
-              <li>Raster preparation and extraction (LST, NDVI)</li>
-              <li>Zonal statistics (raster → tract summaries)</li>
-              <li>Table joins, field calculations, indicator creation</li>
-              <li>Proximity / access indicator design</li>
-              <li>Normalization + composite index modeling</li>
-              <li>Professional cartography and layout design</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Quality & Clarity</h3>
-            <ul class="muted">
-              <li>Join verification + quick QA checks</li>
-              <li>Consistent classification across maps</li>
-              <li>Readable symbology, labels, and legends</li>
-              <li>Transparent assumptions and limitations</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Links</h3>
-            <div class="card__actions" style="margin-top:6px">
-              <a class="btn btn--small btn--ghost"
-                 href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
-                 target="_blank" rel="noreferrer">
-                StoryMap
-              </a>
-              <a class="btn btn--small btn--ghost"
-                 href="https://www.linkedin.com/in/efemena-abogidi-a358b5312/"
-                 target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a class="btn btn--small btn--ghost"
-                 href="https://x.com/EAbogidi"
-                 target="_blank" rel="noreferrer">
-                X
-              </a>
-              <a class="btn btn--small btn--ghost"
-                 href="https://www.instagram.com/efe_abogidi/"
-                 target="_blank" rel="noreferrer">
-                Instagram
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Results / Interpretation -->
-        <div class="section__head reveal" style="margin-top:56px">
-          <h2>Results & Interpretation</h2>
-          <p>How the outputs can be used and what they show at a high level.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card reveal">
-            <h3>What the maps reveal</h3>
-            <p class="muted">
-              The project highlights neighborhoods where higher heat exposure and lower mitigation can overlap with demographic vulnerability
-              and limited cooling access — producing a clearer picture of where intervention may matter most.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>How it can be used</h3>
-            <ul class="muted">
-              <li>Prioritize outreach and heat response planning</li>
-              <li>Support cooling center placement and access improvements</li>
-              <li>Guide vegetation and shade investments</li>
-              <li>Communicate risk clearly to non-technical audiences</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Limitations</h3>
-            <ul class="muted">
-              <li>Temporal alignment between datasets can affect interpretation</li>
-              <li>Index weighting choices can change rankings</li>
-              <li>Access indicators depend on travel assumptions and context</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Next steps</h3>
-            <ul class="muted">
-              <li>Run sensitivity checks on weights and normalization</li>
-              <li>Add canopy / impervious surface / shade variables</li>
-              <li>Incorporate heat-health outcomes if available</li>
-              <li>Ground-truth with local context and stakeholders</li>
-            </ul>
-          </article>
-        </div>
-
-        <!-- Contact callout -->
-        <div class="callout reveal" style="margin-top:32px">
-          <p>
-            Want the workflow notes, map exports, or a quick walkthrough of the process?
-          </p>
-          <a class="btn btn--small" href="mailto:efeabogidi@gmail.com">Email Me</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="muted small">© <span id="year"></span> Efemena “Efe” Abogidi</p>
-      <div class="footer__links">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#career">Career</a>
-        <a href="https://www.linkedin.com/in/efemena-abogidi-a358b5312/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://x.com/EAbogidi" target="_blank" rel="noreferrer">X</a>
-        <a href="https://www.instagram.com/efe_abogidi/" target="_blank" rel="noreferrer">Instagram</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/main.js"></script>
 </body>
 </html>
