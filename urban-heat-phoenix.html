@@ -1,105 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Urban Heat Vulnerability — Phoenix, AZ</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phoenix Urban Heat Vulnerability — Efe Abogidi</title>
+  <meta name="description" content="Case study: building a tract-level heat vulnerability index for Phoenix using environmental, demographic, and accessibility factors." />
+  <link rel="icon" href="assets/profile.png" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+  <div class="progress" aria-hidden="true">
+    <div id="progressBar" class="progress__bar"></div>
+  </div>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Efemena Abogidi</span>
-      </div>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__dot"></span>
+        <span class="brand__text">Efe Abogidi</span>
+      </a>
 
-      <nav class="nav-links">
-        <a href="index.html#work">← Back</a>
-        <a href="#overview">Overview</a>
-        <a href="#methods">Methods</a>
-        <a href="#storymap">StoryMap</a>
+      <nav class="nav nav--desktop" aria-label="Primary">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="btn btn--small">Contact</a>
       </nav>
+
+      <button
+        id="menuBtn"
+        class="menuBtn"
+        type="button"
+        aria-controls="mobileNav"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open menu</span>
+        <span class="menuBtn__lines" aria-hidden="true"></span>
+      </button>
     </div>
+
+    <nav id="mobileNav" class="nav nav--mobile container" aria-label="Mobile" hidden>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero" id="overview">
-      <div class="kicker">Case Study</div>
-      <h1>Urban Heat Vulnerability — Phoenix, AZ</h1>
-      <p class="subtitle">
-        This project analyzes neighborhood-level vulnerability to extreme heat in Phoenix, Arizona.
-        It combines environmental conditions (LST, vegetation), socioeconomic indicators, and accessibility concepts
-        to identify communities most at risk.
-      </p>
-    </section>
-
-    <section class="section card" id="methods">
-      <div class="card-pad">
-        <div class="section-title">
-          <h2>Key Questions</h2>
-        </div>
-        <div class="pills">
-          <span class="pill">Where is heat exposure highest?</span>
-          <span class="pill">How does NDVI relate to temperature?</span>
-          <span class="pill">Which communities face the most risk?</span>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Phoenix Urban Heat Vulnerability Index</h2>
+          <p>
+            Case study: combining environmental exposure, neighborhood vulnerability, and access to cooling resources.
+          </p>
+          <div class="hero__cta" style="margin-top:16px">
+            <a class="btn btn--small" href="index.html#projects">← Back</a>
+            <a class="btn btn--small btn--ghost" href="mailto:efeabogidi@gmail.com">Contact</a>
+          </div>
         </div>
 
-        <hr class="sep"/>
+        <div class="grid">
+          <article class="card reveal">
+            <h3>Overview</h3>
+            <p class="muted">
+              I created a tract-level heat vulnerability index for Phoenix by integrating environmental indicators
+              (e.g., land surface temperature and vegetation cover) with socioeconomic and accessibility variables.
+            </p>
+          </article>
 
-        <div class="section-title">
-          <h2>Data & Methods</h2>
+          <article class="card reveal">
+            <h3>Problem</h3>
+            <p class="muted">
+              Extreme heat is not evenly experienced across a city. Neighborhood conditions, resources, and access
+              can amplify risk — especially for vulnerable populations.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Data</h3>
+            <ul class="muted">
+              <li>Census tracts (Phoenix/Maricopa area)</li>
+              <li>Land surface temperature (raster)</li>
+              <li>NDVI / vegetation cover (raster)</li>
+              <li>Demographic indicators (tabular)</li>
+              <li>Cooling centers (points)</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Method</h3>
+            <ul class="muted">
+              <li>Standardized projection and clipped all layers to the study area</li>
+              <li>Extracted raster summaries to tracts (zonal statistics)</li>
+              <li>Calculated access/proximity to cooling centers</li>
+              <li>Normalized variables and built a composite index</li>
+              <li>Mapped results using consistent classification and layouts</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Results</h3>
+            <ul class="muted">
+              <li>Highlighted neighborhoods with high heat exposure and low vegetation</li>
+              <li>Identified areas where vulnerable demographics overlap with poor access to cooling</li>
+              <li>Created a tract-level index to support prioritization and communication</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Deliverables</h3>
+            <ul class="muted">
+              <li>Heat exposure maps (LST)</li>
+              <li>Vegetation maps (NDVI)</li>
+              <li>Accessibility to cooling centers</li>
+              <li>Final vulnerability index map + documentation</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Limitations & Next Steps</h3>
+            <ul class="muted">
+              <li>Improve temporal matching across datasets (season/time-of-day)</li>
+              <li>Test alternative weighting strategies and sensitivity analysis</li>
+              <li>Add shade, tree canopy, and impervious surface variables</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Tools</h3>
+            <p class="muted">
+              ArcGIS Pro • Raster tools • Zonal Statistics • Network/Proximity analysis • Clean map layout standards
+            </p>
+          </article>
         </div>
 
-        <p>
-          Core layers typically include land surface temperature, vegetation index (NDVI), and demographic vulnerability indicators.
-          The workflow uses GIS joins, zonal statistics, and map design in ArcGIS Pro to summarize patterns at neighborhood/tract scales.
-        </p>
-
-        <div class="pills">
-          <span class="pill">Landsat LST</span>
-          <span class="pill">NDVI</span>
-          <span class="pill">U.S. Census</span>
-          <span class="pill">Spatial Joins</span>
-          <span class="pill">Zonal Statistics</span>
-          <span class="pill">Choropleth Mapping</span>
+        <div class="callout reveal">
+          <p>
+            Want the full workflow, data dictionary, or map exports?
+          </p>
+          <a class="btn btn--small" href="mailto:efeabogidi@gmail.com">Email Me</a>
         </div>
       </div>
     </section>
-
-    <section class="section card" id="storymap">
-      <div class="card-pad">
-        <div class="section-title">
-          <h2>Interactive StoryMap</h2>
-          <span class="tag">ArcGIS StoryMaps</span>
-        </div>
-
-        <p>
-          View the full interactive narrative and maps here:
-        </p>
-
-        <div class="btns" style="justify-content:flex-start;">
-          <a class="btn primary" target="_blank"
-             href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf">
-            Open StoryMap
-          </a>
-          <a class="btn" href="index.html#work">Back to Home</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Efemena Abogidi</div>
-        <div class="small-muted">Project: Urban Heat Vulnerability</div>
-      </div>
-    </footer>
   </main>
 
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="muted small">© <span id="year"></span> Efemena “Efe” Abogidi</p>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="assets/main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
