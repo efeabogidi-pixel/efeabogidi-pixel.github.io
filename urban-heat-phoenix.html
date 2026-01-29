@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phoenix Urban Heat Vulnerability — Efe Abogidi</title>
-  <meta name="description" content="Case study: building a tract-level heat vulnerability index for Phoenix using environmental, demographic, and accessibility factors." />
+  <title>Mapping Extreme Urban Heat Vulnerability — Phoenix, AZ | Efemena Abogidi</title>
+  <meta name="description" content="Case study: Mapping extreme urban heat vulnerability in Phoenix using LST, NDVI, demographics, and access to cooling resources." />
   <link rel="icon" href="assets/profile.png" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -18,13 +18,13 @@
     <div class="container header__inner">
       <a class="brand" href="index.html">
         <span class="brand__dot"></span>
-        <span class="brand__text">Efe Abogidi</span>
+        <span class="brand__text">Efemena Abogidi</span>
       </a>
 
       <nav class="nav nav--desktop" aria-label="Primary">
         <a href="index.html#projects">Projects</a>
+        <a href="index.html#career">Career</a>
         <a href="index.html#skills">Skills</a>
-        <a href="index.html#about">About</a>
         <a href="index.html#contact" class="btn btn--small">Contact</a>
       </nav>
 
@@ -42,8 +42,8 @@
 
     <nav id="mobileNav" class="nav nav--mobile container" aria-label="Mobile" hidden>
       <a href="index.html#projects">Projects</a>
+      <a href="index.html#career">Career</a>
       <a href="index.html#skills">Skills</a>
-      <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
@@ -52,13 +52,18 @@
     <section class="section">
       <div class="container">
         <div class="section__head reveal">
-          <h2>Phoenix Urban Heat Vulnerability Index</h2>
+          <h2>Mapping Extreme Urban Heat Vulnerability — Phoenix, AZ</h2>
           <p>
-            Case study: combining environmental exposure, neighborhood vulnerability, and access to cooling resources.
+            A GIS case study combining environmental exposure, neighborhood vulnerability, and access to cooling resources.
           </p>
+
           <div class="hero__cta" style="margin-top:16px">
-            <a class="btn btn--small" href="index.html#projects">← Back</a>
-            <a class="btn btn--small btn--ghost" href="mailto:efeabogidi@gmail.com">Contact</a>
+            <a class="btn btn--small" href="index.html#projects">← Back to Projects</a>
+            <a class="btn btn--small btn--ghost"
+               href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
+               target="_blank" rel="noreferrer">
+              View StoryMap
+            </a>
           </div>
         </div>
 
@@ -66,82 +71,92 @@
           <article class="card reveal">
             <h3>Overview</h3>
             <p class="muted">
-              I created a tract-level heat vulnerability index for Phoenix by integrating environmental indicators
-              (e.g., land surface temperature and vegetation cover) with socioeconomic and accessibility variables.
+              This project maps neighborhood-level vulnerability to extreme heat in Phoenix by integrating
+              land surface temperature (LST), vegetation (NDVI), demographic vulnerability, and access to cooling resources.
+              The goal is to create clear outputs that help identify where risk may be concentrated.
             </p>
           </article>
 
           <article class="card reveal">
-            <h3>Problem</h3>
+            <h3>Why it matters</h3>
             <p class="muted">
-              Extreme heat is not evenly experienced across a city. Neighborhood conditions, resources, and access
-              can amplify risk — especially for vulnerable populations.
+              Heat risk is not evenly distributed. Neighborhood conditions, built environment, and access to resources
+              can amplify exposure — especially for vulnerable populations.
             </p>
           </article>
 
           <article class="card reveal">
             <h3>Data</h3>
             <ul class="muted">
-              <li>Census tracts (Phoenix/Maricopa area)</li>
-              <li>Land surface temperature (raster)</li>
-              <li>NDVI / vegetation cover (raster)</li>
-              <li>Demographic indicators (tabular)</li>
-              <li>Cooling centers (points)</li>
+              <li>Census tracts for the Phoenix area</li>
+              <li>Land surface temperature raster (heat exposure)</li>
+              <li>NDVI / vegetation raster (heat mitigation)</li>
+              <li>Demographic indicators (vulnerability context)</li>
+              <li>Cooling centers (access/proximity)</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <h3>Method</h3>
             <ul class="muted">
-              <li>Standardized projection and clipped all layers to the study area</li>
-              <li>Extracted raster summaries to tracts (zonal statistics)</li>
-              <li>Calculated access/proximity to cooling centers</li>
-              <li>Normalized variables and built a composite index</li>
-              <li>Mapped results using consistent classification and layouts</li>
+              <li>Prepared and clipped datasets to the study area</li>
+              <li>Summarized raster variables to tracts (zonal statistics)</li>
+              <li>Calculated access indicators for cooling centers (proximity/service logic)</li>
+              <li>Normalized variables to a common scale</li>
+              <li>Combined indicators into a composite vulnerability index</li>
+              <li>Mapped results using consistent classification and clean layouts</li>
             </ul>
           </article>
 
           <article class="card reveal">
-            <h3>Results</h3>
+            <h3>Outputs</h3>
             <ul class="muted">
-              <li>Highlighted neighborhoods with high heat exposure and low vegetation</li>
-              <li>Identified areas where vulnerable demographics overlap with poor access to cooling</li>
-              <li>Created a tract-level index to support prioritization and communication</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Deliverables</h3>
-            <ul class="muted">
-              <li>Heat exposure maps (LST)</li>
-              <li>Vegetation maps (NDVI)</li>
-              <li>Accessibility to cooling centers</li>
-              <li>Final vulnerability index map + documentation</li>
+              <li>Heat exposure (LST) map</li>
+              <li>Vegetation (NDVI) map</li>
+              <li>Cooling access indicator</li>
+              <li>Final vulnerability index map</li>
+              <li>StoryMap narrative connecting results to context</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <h3>Limitations & Next Steps</h3>
             <ul class="muted">
-              <li>Improve temporal matching across datasets (season/time-of-day)</li>
-              <li>Test alternative weighting strategies and sensitivity analysis</li>
-              <li>Add shade, tree canopy, and impervious surface variables</li>
+              <li>Strengthen temporal alignment between raster layers and demographic data</li>
+              <li>Test different weighting strategies and sensitivity checks</li>
+              <li>Add tree canopy, impervious surface, shade, and heat-health outcomes</li>
+              <li>Validate with local knowledge and ground-level context</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <h3>Tools</h3>
             <p class="muted">
-              ArcGIS Pro • Raster tools • Zonal Statistics • Network/Proximity analysis • Clean map layout standards
+              ArcGIS Pro • Raster tools • Zonal statistics • Joins/field calculations • Professional cartography • ArcGIS StoryMaps
             </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Contact</h3>
+            <p class="muted">
+              If you’d like the full workflow notes, map exports, or a walkthrough, email me.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--small" href="mailto:efeabogidi@gmail.com">Email Me</a>
+              <a class="btn btn--small btn--ghost"
+                 href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf"
+                 target="_blank" rel="noreferrer">
+                StoryMap
+              </a>
+            </div>
           </article>
         </div>
 
         <div class="callout reveal">
           <p>
-            Want the full workflow, data dictionary, or map exports?
+            Want a short version for recruiters? I can provide a one-page summary and selected map exports.
           </p>
-          <a class="btn btn--small" href="mailto:efeabogidi@gmail.com">Email Me</a>
+          <a class="btn btn--small" href="mailto:efeabogidi@gmail.com">Request Summary</a>
         </div>
       </div>
     </section>
@@ -151,8 +166,8 @@
     <div class="container footer__inner">
       <p class="muted small">© <span id="year"></span> Efemena “Efe” Abogidi</p>
       <div class="footer__links">
-        <a href="index.html">Home</a>
         <a href="index.html#projects">Projects</a>
+        <a href="index.html#career">Career</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </div>
