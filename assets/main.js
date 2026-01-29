@@ -24,25 +24,21 @@ function toggleMenu() {
 }
 
 if (btn && mobile) {
-  // Start closed
   btn.setAttribute("aria-expanded", "false");
   mobile.hidden = true;
 
   btn.addEventListener("click", toggleMenu);
 
-  // Close on nav click
   mobile.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", closeMenu);
   });
 
-  // Close on outside click
   document.addEventListener("click", (e) => {
     if (mobile.hidden) return;
     const clickedInside = mobile.contains(e.target) || btn.contains(e.target);
     if (!clickedInside) closeMenu();
   });
 
-  // Close on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
