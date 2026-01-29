@@ -196,7 +196,7 @@ img{max-width:100%; display:block}
   color: var(--muted);
   font-size: 18px;
   margin: 0 0 var(--s4);
-  max-width: 58ch;
+  max-width: 62ch;
 }
 .hero__cta{
   display:flex;
@@ -301,11 +301,25 @@ img{max-width:100%; display:block}
 .section__head p{
   color: var(--muted);
   margin:0;
-  max-width: 70ch;
+  max-width: 78ch;
 }
 
 .muted{color:var(--muted)}
 .small{font-size: 13px}
+
+/* Project feature strip */
+.feature{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(18,24,39,.55);
+  border-radius: var(--radius);
+  padding: var(--s4);
+  box-shadow: var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: var(--s4);
+  margin-bottom: var(--s4);
+}
 
 /* Project grid */
 .grid{
@@ -326,9 +340,7 @@ img{max-width:100%; display:block}
   margin: 0 0 10px;
   font-size: 20px;
 }
-.card__top p{
-  margin:0;
-}
+.card__top p{margin:0}
 .tags{
   display:flex;
   gap:8px;
@@ -361,6 +373,33 @@ img{max-width:100%; display:block}
   justify-content:space-between;
   gap: var(--s3);
 }
+
+/* Career */
+.careerGrid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: var(--s4);
+}
+.careerCard{
+  border: 1px solid var(--line);
+  background: rgba(18,24,39,.72);
+  border-radius: var(--radius);
+  padding: var(--s4);
+  box-shadow: var(--shadow);
+}
+.careerTag{
+  margin:0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing:.14em;
+  text-transform: uppercase;
+}
+.careerList{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.careerList li{margin: 10px 0}
 
 /* Skills */
 .skillGrid{
@@ -462,15 +501,24 @@ img{max-width:100%; display:block}
 @media (max-width: 980px){
   .hero__grid{grid-template-columns: 1fr; gap: var(--s5);}
   .grid{grid-template-columns: 1fr;}
+  .careerGrid{grid-template-columns: 1fr;}
   .skillGrid{grid-template-columns: 1fr;}
   .twoCol{grid-template-columns: 1fr;}
   .callout{flex-direction:column; align-items:flex-start;}
+  .feature{flex-direction:column; align-items:flex-start;}
 }
 
 @media (max-width: 760px){
   .nav--desktop{display:none}
   .menuBtn{display:inline-flex}
   .nav--mobile{display:block}
+}
+
+@media (max-width: 520px){
+  .hero{padding: var(--s6) 0 var(--s5);}
+  .hero__subtitle{font-size:16px}
+  .btn{width:100%}
+  .hero__cta{gap:10px}
 }
 
 /* Reduce motion */
