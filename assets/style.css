@@ -467,3 +467,20 @@ h1,h2,h3,.timeline-meta span,.metric-row strong,.inner-page .next-page strong:be
 @keyframes education-triangle-breathe{from{opacity:.48;filter:drop-shadow(0 0 7px rgba(199,169,107,.08))}to{opacity:1;filter:drop-shadow(0 0 19px rgba(199,169,107,.2))}}
 @media(max-width:620px){.education-page .education-directory{min-height:auto}.education-page .education-directory:after{display:none}}
 @media(prefers-reduced-motion:reduce){.education-page .education-directory:before,.education-page .education-directory:after{animation:none}}
+
+/* Keep the cinematic next-page arrow identical on mobile Safari. */
+@media(max-width:600px){
+  .inner-page .next-page strong:after,
+  .profile-career-link strong:after{
+    content:"↗";
+    width:52px;
+    height:52px;
+    flex:0 0 52px;
+    aspect-ratio:1;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    font:400 20px/1 var(--sans);
+    text-align:center;
+  }
+}
