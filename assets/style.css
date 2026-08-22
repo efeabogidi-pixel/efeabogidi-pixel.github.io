@@ -497,6 +497,16 @@ h1,h2,h3,.timeline-meta span,.metric-row strong,.inner-page .next-page strong:be
   background-position:center;
   background-size:15px 15px;
 }
+.national-team-chapters{display:grid;gap:0}
+.national-team-chapter{padding:0 0 28px;border-bottom:1px solid rgba(242,239,229,.15)}
+.national-team-chapter+.national-team-chapter{padding-top:28px}
+.national-team-chapter:last-child{padding-bottom:0;border-bottom:0}
+.national-team-chapter header{display:flex;align-items:baseline;gap:16px;margin-bottom:14px}
+.national-team-chapter header small{flex:0 0 auto;color:var(--gold);font:600 10px/1 var(--sans);letter-spacing:.18em}
+.career-page .national-team-chapter h3{margin:0;color:var(--cream);font:500 clamp(24px,2.25vw,34px)/1 var(--serif);letter-spacing:-.035em}
+.national-team-chapter.is-latest{position:relative}
+.national-team-chapter.is-latest:before{content:"CURRENT";position:absolute;right:0;top:30px;color:rgba(199,169,107,.62);font:600 8px/1 var(--sans);letter-spacing:.18em}
+@media(max-width:700px){.national-team-chapter{padding-bottom:24px}.national-team-chapter+.national-team-chapter{padding-top:24px}.national-team-chapter header{display:block;margin-bottom:15px}.national-team-chapter header small{display:block;margin-bottom:9px}.career-page .national-team-chapter h3{font-size:27px}.national-team-chapter.is-latest:before{top:27px}}
 .home-menu span{
   overflow:hidden;
   color:transparent;
@@ -544,3 +554,87 @@ html{font-variant-emoji:text}
   font-family:Arial,Helvetica,sans-serif;
   font-variant-emoji:text;
 }
+
+/* Refined EA seal: distinct letterforms, balanced rings, and restrained motion. */
+.brand-mark{
+  width:54px;
+  height:54px;
+  isolation:isolate;
+  animation:ea-seal-float 6s ease-in-out infinite;
+  transform:none;
+}
+.brand-orbit{
+  inset:1px;
+  border:1px solid rgba(199,169,107,.46);
+  background:radial-gradient(circle at 38% 30%,rgba(255,235,176,.09),transparent 42%),rgba(4,18,14,.44);
+  box-shadow:inset 0 0 18px rgba(199,169,107,.08),0 8px 24px rgba(0,0,0,.24);
+  transform:none;
+}
+.brand-orbit:before{
+  inset:-3px;
+  border:0;
+  background:conic-gradient(from 24deg,transparent 0 13%,#d8bd7b 13% 28%,transparent 28% 64%,rgba(199,169,107,.78) 64% 82%,transparent 82% 100%);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+  animation:ea-seal-orbit 12s linear infinite;
+}
+.brand-orbit:after{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(199,169,107,.16);
+  border-radius:50%;
+}
+.brand-monogram{
+  width:auto;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1px;
+  transform:translateZ(8px);
+  filter:drop-shadow(0 3px 2px rgba(0,0,0,.52));
+}
+.brand-monogram i{
+  position:relative;
+  inset:auto;
+  font:500 23px/1 var(--serif);
+  letter-spacing:-.08em;
+  background:linear-gradient(110deg,#8b672f 0%,#d9bd78 32%,#fff0b8 50%,#c0974c 72%,#785522 100%);
+  background-size:180% 100%;
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  -webkit-text-stroke:.2px rgba(255,239,186,.42);
+  animation:ea-seal-shine 7s ease-in-out infinite;
+}
+.brand-monogram .letter-e,
+.brand-monogram .letter-a{
+  left:auto;
+  right:auto;
+  top:auto;
+  transform:none;
+  clip-path:none;
+}
+.brand-monogram:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-8px;
+  width:3px;
+  height:3px;
+  background:var(--gold);
+  transform:translateX(-50%) rotate(45deg);
+  box-shadow:0 0 8px rgba(199,169,107,.55);
+}
+.brand-monogram:after{display:none}
+.brand:hover .brand-mark{
+  animation-play-state:paused;
+  transform:translateY(-1px) rotateX(-7deg) rotateY(10deg) scale(1.07);
+  filter:drop-shadow(0 0 12px rgba(199,169,107,.24));
+}
+.brand:hover .brand-orbit:before{animation-duration:5s}
+@keyframes ea-seal-orbit{to{transform:rotate(360deg)}}
+@keyframes ea-seal-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+@keyframes ea-seal-shine{0%,28%,100%{background-position:100% 50%}58%{background-position:0 50%}}
+@media(prefers-reduced-motion:reduce){.brand-mark,.brand-orbit:before,.brand-monogram i{animation:none}}
