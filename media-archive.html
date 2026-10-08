@@ -3,35 +3,157 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Press, highlights, documentaries, and interviews featuring Efemena Abogidi.">
-  
-  <title>Media archive — Efemena Abogidi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="The portfolio of Efemena Abogidi — professional athlete, anthropology student, and emerging GIS practitioner.">
+  <meta name="theme-color" content="#07100d">
+  <title>Efemena Abogidi — Athlete, Scholar & Spatial Thinker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=20261009-editorial">
-  <script src="assets/main.js?v=20261009-editorial" defer></script>
-  <meta name="theme-color" content="#151719">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=20260821-ea-seal">
+  <script src="assets/main.js?v=20260819-sound" defer></script>
 </head>
 <body class="page-media">
-  
-  
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Efemena Abogidi, home"><span class="brand-mark" aria-hidden="true">EA</span><span class="brand-name">Efemena Abogidi</span></a>
-    <nav class="desktop-nav" aria-label="Main navigation"><a href="profile.html">Profile</a><a href="career.html">Career</a><a href="education.html">Education</a><a href="media.html" aria-current="page">Media</a></nav>
-    <a class="nav-cta" href="contact.html">Let’s connect <span aria-hidden="true">↗</span></a>
-    <button class="menu-button" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span></button>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden><a href="profile.html">Profile</a><a href="career.html">Career</a><a href="education.html">Education</a><a href="media.html" aria-current="page">Media</a><a href="contact.html">Connect ↗</a></nav>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="Efemena Abogidi, home">
+      <span class="brand-mark" aria-hidden="true">
+        <span class="brand-orbit"></span>
+        <span class="brand-monogram"><i class="letter-e">E</i><i class="letter-a">A</i></span>
+      </span>
+      <span class="brand-name">Efemena Abogidi</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="profile.html">Profile</a>
+      <a href="career.html">Career</a>
+      <a href="education.html">Education</a>
+
+      <a class="active" href="media.html">Media</a>
+    </nav>
+    <a class="nav-cta" href="contact.html">Connect <span>↗</span></a>
+    <button class="menu-button" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span>
+    </button>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+      <a href="profile.html">Profile</a><a href="career.html">Career</a><a href="education.html">Education</a><a href="media.html">Media</a><a href="contact.html">Connect</a>
+    </nav>
   </header>
 
-  <main id="main"><section class="media" id="media">
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Athlete · Scholar · Spatial Thinker</p>
+        <h1>Built for the court.<br><em>Driven beyond it.</em></h1>
+        <p class="hero-intro">Efemena “Efe” Abogidi brings the discipline of elite sport to a growing body of academic and geospatial work—connecting performance, place, and human experience.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#journey">Explore my journey <span>↓</span></a>
+          <a class="text-link" href="mailto:efeabogidi@gmail.com">efeabogidi@gmail.com <span>↗</span></a>
+        </div>
+      </div>
+      <div class="portrait-wrap reveal">
+        <div class="portrait-frame">
+          <img src="assets/profile.png" alt="Portrait of Efemena Abogidi">
+          <span class="portrait-line"></span>
+          <p>Professional athlete<br>and lifelong student</p>
+        </div>
+        <div class="orbit orbit-one" aria-hidden="true"></div>
+        <div class="orbit orbit-two" aria-hidden="true"></div>
+      </div>
+      <div class="hero-index" aria-label="Portfolio themes">
+        <span>01 / Performance</span><span>02 / Education</span><span>03 / Impact</span>
+      </div>
+    </section>
+
+    <section class="statement" id="profile">
+      <p class="section-number">01 — Profile</p>
+      <div class="statement-grid">
+        <h2 class="reveal">One career.<br><em>Multiple arenas.</em></h2>
+        <div class="statement-copy reveal">
+          <p>From Nigeria to Australia and the United States, Efe's journey has been shaped by movement, adaptation, and an uncompromising commitment to growth.</p>
+          <p>His professional basketball career reflects years of high-performance training and international competition. His academic work in anthropology and GIS brings a second lens: understanding people, environments, and the patterns that connect them.</p>
+        </div>
+      </div>
+      <div class="metric-row reveal">
+        <article><strong>3</strong><span>Continents shaping<br>one global perspective</span></article>
+        <article><strong>D1</strong><span>NCAA competition<br>at Washington State</span></article>
+        <article><strong>Pro</strong><span>NBA G League<br>experience</span></article>
+        <article><strong>GIS</strong><span>Spatial research<br>for real-world impact</span></article>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="section-heading reveal">
+        <p class="section-number">02 — Career</p>
+        <h2>A journey measured<br>in <em>growth.</em></h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-meta"><span>Nigeria</span><small>Foundation</small></div>
+          <div><h3>Where the work began.</h3><p>Early development built the athletic foundation, competitive identity, and resilience that would carry Efe across continents.</p></div>
+          <span class="timeline-no">01</span>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-meta"><span>Australia</span><small>NBA Academy</small></div>
+          <div><h3>A global pathway.</h3><p>Structured, international competition accelerated his development inside the NBA Academy environment.</p></div>
+          <span class="timeline-no">02</span>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-meta"><span>United States</span><small>Washington State</small></div>
+          <div><h3>Division I impact.</h3><p>Competed in the Pac-12, building a reputation around defensive presence, rebounding, energy, and continual improvement.</p></div>
+          <span class="timeline-no">03</span>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-meta"><span>Professional</span><small>NBA G League</small></div>
+          <div><h3>Turning preparation into profession.</h3><p>Developed with G League Ignite and competed with the Rio Grande Valley Vipers at the professional level.</p></div>
+          <span class="timeline-no">04</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="academics" id="education">
+      <div class="academic-panel reveal">
+        <p class="section-number light">03 — Education</p>
+        <h2>More than<br><em>an athlete.</em></h2>
+        <p class="academic-lede">Efe earned a bachelor's degree in Anthropology from Arizona State University while competing professionally—an education shaped by discipline, global experience, and curiosity about people and culture.</p>
+        <div class="academic-tags" aria-label="Academic areas">
+          <span>Anthropology</span><span>GIS Analysis</span><span>Remote Sensing</span><span>Spatial Storytelling</span>
+        </div>
+      </div>
+      <div class="academic-notes reveal">
+        <p class="quote">“I’ve always wanted to be more than just an athlete.”</p>
+        <div class="education-records">
+          <article><span>2026</span><div><h3>Arizona State University</h3><p>Bachelor's degree · Anthropology<br>School of Human Evolution and Social Change</p><small>Dean's List honoree</small></div></article>
+          <article><span>2020—22</span><div><h3>Washington State University</h3><p>Student-athlete · NCAA Division I<br>Pac-12 Conference</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
       <div class="section-heading split reveal">
-        <div><p class="section-number">05 — Media &amp; Press</p><h1>News &amp; Features</h1></div>
+        <div><p class="section-number">04 — Selected Work</p><h2>Research built to<br><em>be understood.</em></h2></div>
+        <p>Focused work at the intersection of environmental data, public health, and spatial communication.</p>
+      </div>
+      <a class="project-card reveal" href="urban-heat-phoenix.html">
+        <div class="project-visual">
+          <div class="heat-map" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+          <p>Phoenix, Arizona<br>33.4484° N, 112.0740° W</p>
+        </div>
+        <div class="project-copy">
+          <p class="project-type">Featured case study · GIS / Remote Sensing</p>
+          <h3>Urban Heat<br>Vulnerability</h3>
+          <p>Mapping land surface temperature, vegetation, and demographic context to reveal neighborhood-level patterns of exposure and risk.</p>
+          <span class="project-link">View case study <b>↗</b></span>
+        </div>
+      </a>
+    </section>
+
+    <section class="media" id="media">
+      <div class="section-heading split reveal">
+        <div><p class="section-number">05 — Media &amp; Press</p><h2>The story,<br><em>documented.</em></h2></div>
         <p>A curated archive of reporting, defining moments, and long-form stories from across Efe's journey.</p>
       </div>
-      <nav class="archive-nav" aria-label="Media categories"><a href="media-archive.html?section=press">News &amp; Features</a><a href="media-archive.html?section=highlights">Highlights</a><a href="media-archive.html?section=documentaries">Documentaries</a><a href="media-archive.html?section=interviews">Interviews</a></nav><div class="media-collections">
+      <div class="media-collections">
         <article class="media-lane reveal" data-media-category="press">
           <div class="media-lane-head"><span>01</span><h3>News &amp; Features</h3><small>Articles</small></div>
           <a class="media-entry" href="https://www.instagram.com/friendsofnb/p/DcOJCCTkYEs/?hl=en" target="_blank" rel="noopener">
@@ -104,17 +226,17 @@
             <b>Watch highlight ↗</b>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=uij0I_ZPm6A" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/uij0I_ZPm6A/hqdefault.jpg" alt="Efe Abogidi 2026 Summer League highlights against the Raptors" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/uij0I_ZPm6A/hqdefault.jpg" alt="Efe Abogidi 2026 Summer League highlights against the Raptors"><span>▶</span></div>
             <small>CourtVision · YouTube</small>
             <strong>11 points, 4 rebounds vs. Raptors — 2026 Summer League</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=5_Nl9QfaIu0" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/5_Nl9QfaIu0/hqdefault.jpg" alt="Efe Abogidi scoring highlights" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/5_Nl9QfaIu0/hqdefault.jpg" alt="Efe Abogidi scoring highlights"><span>▶</span></div>
             <small>MrBuckBuckClips · YouTube</small>
             <strong>Layup, contested three, cutting dunk, and more</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=YKBhoZFpJ4Y" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/YKBhoZFpJ4Y/hqdefault.jpg" alt="Efe Abogidi Rio Grande Valley Vipers best plays" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/YKBhoZFpJ4Y/hqdefault.jpg" alt="Efe Abogidi Rio Grande Valley Vipers best plays"><span>▶</span></div>
             <small>알럽바스켓공 · YouTube</small>
             <strong>Rio Grande Valley Vipers — 2025–26 best plays and highlights</strong>
           </a>
@@ -131,22 +253,22 @@
             <b>Watch on ESPN ↗</b>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=3RTrb7opm5Q" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/3RTrb7opm5Q/hqdefault.jpg" alt="CBS 4 Athlete of the Week feature about Efe Abogidi" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/3RTrb7opm5Q/hqdefault.jpg" alt="CBS 4 Athlete of the Week feature about Efe Abogidi"><span>▶</span></div>
             <small>CBS 4 News Rio Grande Valley · YouTube</small>
             <strong>Athlete of the Week: Efe Abogidi</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=uBJBW3Z4yh0" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/uBJBW3Z4yh0/hqdefault.jpg" alt="Efemena Abogidi scoring 28 points against Forestville" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/uBJBW3Z4yh0/hqdefault.jpg" alt="Efemena Abogidi scoring 28 points against Forestville"><span>▶</span></div>
             <small>NBL1 · YouTube</small>
             <strong>28 points vs. Forestville</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=T-CYhHtwOgA" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/T-CYhHtwOgA/hqdefault.jpg" alt="Efemena Abogidi scoring 30 points against South Adelaide" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/T-CYhHtwOgA/hqdefault.jpg" alt="Efemena Abogidi scoring 30 points against South Adelaide"><span>▶</span></div>
             <small>NBL1 · YouTube</small>
             <strong>30 points vs. South Adelaide</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=Uw2Qqo-exas" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/Uw2Qqo-exas/hqdefault.jpg" alt="Efemena Abogidi scoring 23 points against West Adelaide" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/Uw2Qqo-exas/hqdefault.jpg" alt="Efemena Abogidi scoring 23 points against West Adelaide"><span>▶</span></div>
             <small>NBL1 · YouTube</small>
             <strong>23 points vs. West Adelaide</strong>
           </a>
@@ -163,17 +285,17 @@
             <b>Watch on ESPN ↗</b>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=410KYuo1W14" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/410KYuo1W14/hqdefault.jpg" alt="Efe Abogidi G League Ignite highlight reel" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/410KYuo1W14/hqdefault.jpg" alt="Efe Abogidi G League Ignite highlight reel"><span>▶</span></div>
             <small>Campus Reels · YouTube</small>
             <strong>Efe Abogidi — G League Ignite center</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=Fda-HgX7UkM" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/Fda-HgX7UkM/hqdefault.jpg" alt="Efe Abogidi number one SportsCenter Top Ten dunk against SMU" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/Fda-HgX7UkM/hqdefault.jpg" alt="Efe Abogidi number one SportsCenter Top Ten dunk against SMU"><span>▶</span></div>
             <small>WSU Cougar Athletics · March 20, 2022</small>
             <strong>No. 1 on SportsCenter Top Ten — dunk vs. SMU</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=-CoIxsoYk2g" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/-CoIxsoYk2g/hqdefault.jpg" alt="Efe Abogidi Washington State defensive highlights" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/-CoIxsoYk2g/hqdefault.jpg" alt="Efe Abogidi Washington State defensive highlights"><span>▶</span></div>
             <small>Next Ones · YouTube</small>
             <strong>Washington State defensive highlights</strong>
           </a>
@@ -184,12 +306,12 @@
             <b>Watch game winner ↗</b>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=YjAVL6GrPlM" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/YjAVL6GrPlM/hqdefault.jpg" alt="Efe Abogidi Pac-12 Men's Basketball Freshman of the Week feature" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/YjAVL6GrPlM/hqdefault.jpg" alt="Efe Abogidi Pac-12 Men's Basketball Freshman of the Week feature"><span>▶</span></div>
             <small>Pac-12 · YouTube</small>
             <strong>Pac-12 Men’s Basketball Freshman of the Week</strong>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=9bCZHoq-hd8" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/9bCZHoq-hd8/hqdefault.jpg" alt="Efe Abogidi scoring 23 points against Oklahoma City" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/9bCZHoq-hd8/hqdefault.jpg" alt="Efe Abogidi scoring 23 points against Oklahoma City"><span>▶</span></div>
             <small>Tremendous Upside · November 4, 2022</small>
             <strong>23 points vs. Oklahoma City</strong>
           </a>
@@ -212,7 +334,7 @@
             <b>Watch on TikTok ↗</b>
           </a>
           <a class="media-video" href="https://www.youtube.com/watch?v=kOo-QRLC3Dk" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/kOo-QRLC3Dk/hqdefault.jpg" alt="Efe Abogidi poster dunk against Oregon State" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/kOo-QRLC3Dk/hqdefault.jpg" alt="Efe Abogidi poster dunk against Oregon State"><span>▶</span></div>
             <small>WSU Cougar Athletics · February 6, 2021</small>
             <strong>Poster dunk vs. Oregon State</strong>
           </a>
@@ -226,12 +348,12 @@
         <article class="media-lane reveal" data-media-category="documentaries">
           <div class="media-lane-head"><span>03</span><h3>Documentaries</h3><small>Long-form</small></div>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=B-QriV7ODS8" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/B-QriV7ODS8/hqdefault.jpg" alt="NBA G League Baseline Basics feature about Efe Abogidi" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/B-QriV7ODS8/hqdefault.jpg" alt="NBA G League Baseline Basics feature about Efe Abogidi"><span>▶</span></div>
             <small>NBA G League · YouTube</small>
             <strong>Baseline Basics: Efe Abogidi</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=LglgZZR9q88" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/LglgZZR9q88/hqdefault.jpg" alt="NBA Academy Journeys documentary about Efe Abogidi" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/LglgZZR9q88/hqdefault.jpg" alt="NBA Academy Journeys documentary about Efe Abogidi"><span>▶</span></div>
             <small>NBA Academy · YouTube</small>
             <strong>NBA Academy Journeys: Efe Abogidi</strong>
           </a>
@@ -245,69 +367,104 @@
             <b>Watch interview ↗</b>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=4ER1l2P7DsI" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/4ER1l2P7DsI/hqdefault.jpg" alt="Washington State Cougar Chats interview with Efe Abogidi" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/4ER1l2P7DsI/hqdefault.jpg" alt="Washington State Cougar Chats interview with Efe Abogidi"><span>▶</span></div>
             <small>WSU Cougar Athletics · YouTube</small>
             <strong>Cougar Chats with Efe Abogidi</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=sHBPMD_7lrk" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/sHBPMD_7lrk/hqdefault.jpg" alt="Efe Abogidi and Noah Williams postgame interview after UCSB" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/sHBPMD_7lrk/hqdefault.jpg" alt="Efe Abogidi and Noah Williams postgame interview after UCSB"><span>▶</span></div>
             <small>WSU Cougar Athletics · November 15, 2021</small>
             <strong>UCSB postgame: Efe Abogidi and Noah Williams</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=rYOdr6HW40I" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/rYOdr6HW40I/hqdefault.jpg" alt="Efe Abogidi at Rio Grande Valley Vipers Media Day 2025" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/rYOdr6HW40I/hqdefault.jpg" alt="Efe Abogidi at Rio Grande Valley Vipers Media Day 2025"><span>▶</span></div>
             <small>South Texas Border Sports · 2025</small>
             <strong>Rio Grande Valley Vipers Media Day</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=tJZE555Fiu0" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/tJZE555Fiu0/hqdefault.jpg" alt="Efe Abogidi discussing his journey from Nigeria and Australia to Washington State" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/tJZE555Fiu0/hqdefault.jpg" alt="Efe Abogidi discussing his journey from Nigeria and Australia to Washington State"><span>▶</span></div>
             <small>Pac-12 · YouTube</small>
             <strong>“It’s been special for me” — the journey to Washington State</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=fTJqbE3kTNg" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/fTJqbE3kTNg/hqdefault.jpg" alt="Tyrell Roberts and Efe Abogidi after Washington State played Cal in the Pac-12 Tournament" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/fTJqbE3kTNg/hqdefault.jpg" alt="Tyrell Roberts and Efe Abogidi after Washington State played Cal in the Pac-12 Tournament"><span>▶</span></div>
             <small>WSU Cougar Athletics · March 9, 2022</small>
             <strong>Pac-12 Tournament: Cal postgame</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=yJs29BIgNTk" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/yJs29BIgNTk/hqdefault.jpg" alt="Efe Abogidi and Andrej Jakimovski after Washington State played Cal" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/yJs29BIgNTk/hqdefault.jpg" alt="Efe Abogidi and Andrej Jakimovski after Washington State played Cal"><span>▶</span></div>
             <small>WSU Cougar Athletics · January 15, 2022</small>
             <strong>Cal postgame: Efe Abogidi and Andrej Jakimovski</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=cuLQpPPab8Y" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/cuLQpPPab8Y/hqdefault.jpg" alt="Kyle Smith, Efe Abogidi, and Tyrell Roberts after the NIT first round" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/cuLQpPPab8Y/hqdefault.jpg" alt="Kyle Smith, Efe Abogidi, and Tyrell Roberts after the NIT first round"><span>▶</span></div>
             <small>WSU Cougar Athletics · March 15, 2022</small>
             <strong>NIT first round: Santa Clara postgame</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=luHGUC-Yi0g" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/luHGUC-Yi0g/hqdefault.jpg" alt="Efe Abogidi Pac-12 postgame interview" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/luHGUC-Yi0g/hqdefault.jpg" alt="Efe Abogidi Pac-12 postgame interview"><span>▶</span></div>
             <small>WSU Cougar Athletics · November 15, 2021</small>
             <strong>Pac-12 postgame interview</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=PwTy3Q2SjfA" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/PwTy3Q2SjfA/hqdefault.jpg" alt="Efe Abogidi after Washington State played Eastern Washington" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/PwTy3Q2SjfA/hqdefault.jpg" alt="Efe Abogidi after Washington State played Eastern Washington"><span>▶</span></div>
             <small>WSU Cougar Athletics · November 28, 2020</small>
             <strong>Eastern Washington postgame interview</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=9_GZx03GfW0" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/9_GZx03GfW0/hqdefault.jpg" alt="Efe Abogidi after Washington State played New Mexico State" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/9_GZx03GfW0/hqdefault.jpg" alt="Efe Abogidi after Washington State played New Mexico State"><span>▶</span></div>
             <small>WSU Cougar Athletics · December 15, 2021</small>
             <strong>New Mexico State postgame interview</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=DkpTEXuPS20" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/DkpTEXuPS20/hqdefault.jpg" alt="Efe Abogidi after Washington State played California" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/DkpTEXuPS20/hqdefault.jpg" alt="Efe Abogidi after Washington State played California"><span>▶</span></div>
             <small>WSU Cougar Athletics · February 5, 2022</small>
             <strong>California postgame interview</strong>
           </a>
           <a class="media-video media-video-gold" href="https://www.youtube.com/watch?v=cZPxPztBnuk" target="_blank" rel="noopener">
-            <div><img src="https://i.ytimg.com/vi/cZPxPztBnuk/hqdefault.jpg" alt="Efe Abogidi after Washington State played Prairie View A and M" decoding="async"><span>▶</span></div>
+            <div><img src="https://i.ytimg.com/vi/cZPxPztBnuk/hqdefault.jpg" alt="Efe Abogidi after Washington State played Prairie View A and M"><span>▶</span></div>
             <small>WSU Cougar Athletics · December 21, 2020</small>
             <strong>Prairie View A&amp;M postgame interview</strong>
           </a>
         </article>
       </div>
-    </section><a class="next-page" href="media.html"><small>Back to the collection</small><strong>Media &amp; press <span aria-hidden="true">↗</span></strong></a></main>
-<footer class="site-footer"><a href="index.html">Efemena Abogidi</a><span>Sport. Perspective. Purpose.</span><small>© <span id="year">2026</span></small></footer>
+    </section>
+
+    <section class="capabilities">
+      <p class="section-number">06 — Capabilities</p>
+      <div class="capability-grid reveal">
+        <h2>What I bring<br>to the table.</h2>
+        <div class="capability-list">
+          <p><span>01</span>High-performance mindset</p>
+          <p><span>02</span>Cross-cultural perspective</p>
+          <p><span>03</span>Spatial analysis & mapping</p>
+          <p><span>04</span>Research communication</p>
+          <p><span>05</span>Leadership & collaboration</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="section-number light">07 — Connect</p>
+      <div class="contact-grid">
+        <h2 class="reveal">Let’s build<br>what’s <em>next.</em></h2>
+        <div class="contact-copy reveal">
+          <p>Open to meaningful conversations across sport, research, GIS, community impact, and professional opportunities.</p>
+          <a href="mailto:efeabogidi@gmail.com">Start a conversation <span>↗</span></a>
+        </div>
+      </div>
+      <div class="social-directory reveal" aria-label="Contact and social profiles">
+        <a href="mailto:efeabogidi@gmail.com"><small>Direct</small><strong>Email</strong><span>↗</span></a>
+        <a href="https://www.linkedin.com/in/efemena-abogidi-a358b5312" target="_blank" rel="noopener"><small>Professional</small><strong>LinkedIn</strong><span>↗</span></a>
+        <a href="https://x.com/eabogidi" target="_blank" rel="noopener"><small>@EAbogidi</small><strong>X / Twitter</strong><span>↗</span></a>
+        <a href="https://www.instagram.com/efe_abogidi/" target="_blank" rel="noopener"><small>@efe_abogidi</small><strong>Instagram</strong><span>↗</span></a>
+        <a href="https://www.tiktok.com/@efemenaabogidi" target="_blank" rel="noopener"><small>@efemenaabogidi</small><strong>TikTok</strong><span>↗</span></a>
+      </div>
+      <footer>
+        <span>© <span id="year">2026</span> Efemena Abogidi</span>
+        <div><a href="#top">Back to top ↑</a></div>
+      </footer>
+    </section>
+  </main>
 </body>
 </html>
-
