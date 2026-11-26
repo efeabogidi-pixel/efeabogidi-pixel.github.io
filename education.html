@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/credentials.css?v=20261126">
 </head>
 <body class="inner-page education-page">
   <div class="grain"></div>
@@ -24,7 +25,7 @@
     <nav class="education-directory" aria-label="Education sections">
       <button class="active" type="button" data-education-view="overview"><strong>Academic Journey</strong></button>
       <button type="button" data-education-view="projects"><strong>Projects &amp; Research</strong></button>
-      <button type="button" data-education-view="certifications"><strong>Certifications</strong></button>
+      <button type="button" data-education-view="certifications"><strong>Certificates &amp;<br>Credentials</strong></button>
     </nav>
     <div class="education-view active" data-education-panel="overview">
     <section class="academics standalone">
@@ -46,44 +47,32 @@
     </section>
     </div>
     <div class="education-view" data-education-panel="certifications" hidden>
-    <section class="credential-roadmap" id="certifications">
-      <div class="credential-tier">
-        <div class="credential-tier-title"><span>Spatial analysis &amp; climate</span></div>
-        <div class="credential-list">
-          <a href="https://www.esri.com/training/catalog/57660f19bb54adb30c9454b0/going-places-with-spatial-analysis/" target="_blank" rel="noopener"><span>Esri MOOC</span><strong>Going Places with Spatial Analysis</strong><small>Certificate of completion</small><b>Start course ↗</b></a>
-          <a href="https://www.esri.com/training/catalog/645d6a07eb82fb767bb0c012/gis-for-climate-action/" target="_blank" rel="noopener"><span>Esri MOOC</span><strong>GIS for Climate Action</strong><small>Certificate of completion</small><b>Start course ↗</b></a>
-        </div>
-      </div>
-
-      <div class="credential-tier">
-        <div class="credential-tier-title"><span>Remote sensing</span></div>
-        <div class="credential-list">
-          <a class="credential-complete" href="assets/certificates/efemena-abogidi-nasa-fundamentals-remote-sensing.pdf" target="_blank" rel="noopener"><span>NASA ARSET</span><strong>Fundamentals of Remote Sensing</strong><small>Completed · Certificate of completion</small><b>View credential ↗</b></a>
-          <a href="https://www.earthdata.nasa.gov/data/projects/arset/learn" target="_blank" rel="noopener"><span>NASA ARSET</span><strong>Urban Heat or Human Dimensions Training</strong><small>Next step · Complete an eligible live offering</small><b>Browse courses ↗</b></a>
-          <a class="credential-complete" href="assets/certificates/efe-abogidi-arcgis-imagery-foundations-and-frontiers.pdf" target="_blank" rel="noopener"><span>Esri MOOC</span><strong>ArcGIS Imagery: Foundations and Frontiers</strong><small>Completed · October 9, 2026 · Certificate of completion</small><b>View credential ↗</b></a>
-        </div>
-      </div>
-
-      <div class="credential-tier">
-        <div class="credential-tier-title"><span>Python &amp; data</span></div>
-        <div class="credential-list">
-          <a class="credential-complete credential-with-badge" href="assets/certificates/efemena-abogidi-ibm-data-fundamentals.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/ibm-data-fundamentals-badge.png" alt="" loading="lazy">IBM SkillsBuild</span><strong>Data Fundamentals</strong><small>Completed · Verified digital credential</small><b>View credential ↗</b></a>
-          <a class="credential-complete credential-with-badge" href="assets/certificates/efe-abogidi-python-essentials-1.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/python-essentials-1-badge.png" alt="" loading="lazy">Cisco Networking Academy</span><strong>Python Essentials 1</strong><small>Completed · November 25, 2026 · Certificate &amp; digital badge</small><b>View credential ↗</b></a>
-          <a href="https://pythoninstitute.org/pcep" target="_blank" rel="noopener"><span>Python Institute</span><strong>PCEP — Certified Entry-Level Python Programmer</strong><small>Paid exam · Complete after Python Essentials 1</small><b>View certification ↗</b></a>
-          <a href="https://www.esri.com/training/catalog/5d76dcf7e9ccda09bef61294/spatial-data-science-the-new-frontier-in-analytics/" target="_blank" rel="noopener"><span>Esri MOOC</span><strong>Spatial Data Science: The New Frontier in Analytics</strong><small>Enroll by October 7, 2026</small><b>Start course ↗</b></a>
-        </div>
-      </div>
-
-      <div class="credential-tier">
-        <div class="credential-tier-title"><span>Research &amp; fieldwork</span></div>
-        <div class="credential-list">
-          <a class="credential-complete" href="assets/certificates/efemena-abogidi-cirtification-community-research-training.pdf" target="_blank" rel="noopener"><span>University of Illinois Chicago</span><strong>CIRTification: Community Involvement in Research Training</strong><small>Completed · Certificate of completion</small><b>View credential ↗</b></a>
-          <a class="credential-complete" href="assets/certificates/efe-abogidi-kobotoolbox-humanitarian-needs-assessment.pdf" target="_blank" rel="noopener"><span>KoboToolbox Academy</span><strong>Humanitarian Needs Assessment</strong><small>Completed · Official certificate</small><b>View credential ↗</b></a>
-          <a href="https://www.disasterready.org/monitoring-and-evaluation" target="_blank" rel="noopener"><span>DisasterReady</span><strong>Monitoring and Evaluation</strong><small>Assessment-based certification</small><b>Start course ↗</b></a>
-          <a class="credential-complete credential-with-badge" href="assets/certificates/efemena-abogidi-becoming-an-ethical-researcher.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/becoming-an-ethical-researcher-badge.png" alt="" loading="lazy">The Open University</span><strong>Becoming an Ethical Researcher</strong><small>Completed · 24 CPD points</small><b>View credential ↗</b></a>
-        </div>
-      </div>
-
+    <section class="credential-roadmap credential-showcase" id="certifications" aria-labelledby="credentials-title">
+      <header class="credentials-intro"><p class="credentials-eyebrow">7 completed credentials</p><h1 id="credentials-title">Certificates &amp; Credentials</h1><p>Continued learning in geospatial analysis, Python, data, and ethical community research.</p></header>
+      <div class="credential-tier"><div class="credential-tier-title"><span>GIS &amp; remote sensing</span></div><div class="credential-list"><a class="credential-complete" href="assets/certificates/efe-abogidi-arcgis-imagery-foundations-and-frontiers.pdf" target="_blank" rel="noopener"><span>Esri MOOC</span><strong>ArcGIS Imagery: Foundations and Frontiers</strong><small>Completed · October 9, 2026 · Certificate of completion</small><b>View certificate ↗</b></a>
+<a class="credential-complete" href="assets/certificates/efemena-abogidi-nasa-fundamentals-remote-sensing.pdf" target="_blank" rel="noopener"><span>NASA ARSET</span><strong>Fundamentals of Remote Sensing</strong><small>Completed · Certificate of completion</small><b>View certificate ↗</b></a></div></div>
+<div class="credential-tier"><div class="credential-tier-title"><span>Python &amp; data</span></div><div class="credential-list"><a class="credential-complete credential-with-badge" href="assets/certificates/efe-abogidi-python-essentials-1.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/python-essentials-1-badge.png" alt="" loading="lazy">Cisco Networking Academy</span><strong>Python Essentials 1</strong><small>Completed · November 25, 2026 · Certificate &amp; digital badge</small><b>View certificate ↗</b></a>
+<a class="credential-complete credential-with-badge" href="assets/certificates/efemena-abogidi-ibm-data-fundamentals.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/ibm-data-fundamentals-badge.png" alt="" loading="lazy">IBM SkillsBuild</span><strong>Data Fundamentals</strong><small>Completed · Verified digital credential</small><b>View certificate ↗</b></a></div></div>
+<div class="credential-tier"><div class="credential-tier-title"><span>Research &amp; fieldwork</span></div><div class="credential-list"><a class="credential-complete" href="assets/certificates/efe-abogidi-kobotoolbox-humanitarian-needs-assessment.pdf" target="_blank" rel="noopener"><span>KoboToolbox Academy</span><strong>Humanitarian Needs Assessment</strong><small>Completed · Official certificate</small><b>View certificate ↗</b></a>
+<a class="credential-complete" href="assets/certificates/efemena-abogidi-cirtification-community-research-training.pdf" target="_blank" rel="noopener"><span>University of Illinois Chicago</span><strong>CIRTification: Community Involvement in Research Training</strong><small>Completed · Certificate of completion</small><b>View certificate ↗</b></a>
+<a class="credential-complete credential-with-badge" href="assets/certificates/efemena-abogidi-becoming-an-ethical-researcher.pdf" target="_blank" rel="noopener"><span><img src="assets/certificates/becoming-an-ethical-researcher-badge.png" alt="" loading="lazy">The Open University</span><strong>Becoming an Ethical Researcher</strong><small>Completed · 24 CPD points</small><b>View certificate ↗</b></a></div></div>
+      <aside class="credentials-projects" aria-labelledby="credentials-projects-title"><h2 id="credentials-projects-title">Explore my related research</h2><p>Explore the questions, maps, and analysis behind my portfolio.</p><div><a href="https://storymaps.arcgis.com/stories/ddcf4051ecc0425fa87237f848a02cbf" target="_blank" rel="noopener">Urban Heat Vulnerability ↗</a><a href="https://storymaps.arcgis.com/stories/512e5be0c28c4a6592bba1ce872e9a3d" target="_blank" rel="noopener">Unveiling the Legacy of Redlining ↗</a></div></aside>
+      <details class="credentials-plan"><summary>Learning plan <span>Future development</span></summary>
+        <p>Planned learning and projects. These are not completed credentials.</p>
+        <ol>
+          <li><strong>Apply Python to a GIS case study</strong><p>Document data preparation, analysis, findings, and limitations in a reproducible project.</p></li>
+          <li><strong>Build SQL and spatial database skills</strong><p>Work through PostgreSQL and PostGIS exercises and publish example queries.</p><a href="https://docs.qgis.org/latest/en/docs/training_manual/" target="_blank" rel="noopener">Explore QGIS training ↗</a></li>
+          <li><strong>MEAL Essentials Certificate</strong><p>Planned · DisasterReady · Monitoring, Evaluation, Accountability, and Learning.</p><a href="https://www.disasterready.org/meal-certificate" target="_blank" rel="noopener">View certificate programme ↗</a></li>
+        </ol>
+        <h3>Further options</h3><p>Select a GIS course aligned with the next project; check the provider for current availability.</p>
+        <ul class="credentials-options">
+          <li><a href="https://www.esri.com/training/catalog/57660f19bb54adb30c9454b0/going-places-with-spatial-analysis/" target="_blank" rel="noopener">Going Places with Spatial Analysis ↗</a></li>
+<li><a href="https://www.esri.com/training/catalog/645d6a07eb82fb767bb0c012/gis-for-climate-action/" target="_blank" rel="noopener">GIS for Climate Action ↗</a></li>
+<li><a href="https://www.esri.com/training/catalog/5d76dcf7e9ccda09bef61294/spatial-data-science-the-new-frontier-in-analytics/" target="_blank" rel="noopener">Spatial Data Science: The New Frontier in Analytics ↗</a></li>
+          <li><a href="https://www.earthdata.nasa.gov/data/projects/arset/learn" target="_blank" rel="noopener">NASA ARSET training catalogue ↗</a></li>
+          <li><a href="https://pythoninstitute.org/pcep" target="_blank" rel="noopener">PCEP — optional paid Python certification exam ↗</a></li>
+        </ul>
+      </details>
     </section>
     </div>
     <a class="next-page" href="media.html"><small>Next chapter</small><strong>Media &amp; press →</strong></a>
